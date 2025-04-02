@@ -1,11 +1,7 @@
 # Pen Plotter
 
 ## Members
-- Sabrina Johnson
-- Tiffany Cai
-- Al-kesna Foster
-- John Abramo
-- Nick Brown
+Sabrina Johnson, Tiffany Cai, Al-kesna Foster, John Abramo, Nick Brown
 
 ## Software
 - [Zeptoforth](https://github.com/tabemann/zeptoforth)
