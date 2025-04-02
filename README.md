@@ -8,6 +8,6 @@ Zeptoforth
 https://github.com/tabemann/zeptoforth
 
 ## Hardware
-Mini - RepRap Arduino-Mega-Compatible Motherboard (a.k.a. Mini-Rambo)
-Raspberry Pi Pico 2 (RP2350)
-Lulzbot Mini
+*Mini - RepRap Arduino-Mega-Compatible Motherboard (a.k.a. Mini-Rambo)
+*Raspberry Pi Pico 2 (RP2350)
+*Lulzbot Mini
