@@ -1,14 +1,12 @@
 # Word List
 
-## Axis Primitives (Position)
+## Axis Primitives
 
 `at-stop? ( axis -- bool )`  
 Is a stop hit in the `axis` position?
 
 `current-pos ( axis -- n )`  
 Returns the current position of the given `axis`.
-
-## Axis Movement (Reset/Homing)
 
 `reset-axis ( axis -- )`  
 Moves the axis motor to its reset position.  
@@ -64,12 +62,12 @@ Lifts the pen up.
 `lower-pen ( -- )`  
 Lowers the pen down.
 
-## Character-Level Drawing Prep
+## Spacing
 
 `next-char ( -- )`  
 Moves the pen to the starting position for the next character (top-left corner of the character space).
 
-## Compound Drawing Commands
+## Lines
 `horizontal-line ( len -- )`  
 Draws a horizontal line from left to right.  
 Implemented as: `pen-down len rel-x pen-up`
