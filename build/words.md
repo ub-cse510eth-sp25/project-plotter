@@ -1,12 +1,9 @@
 # Word List
 
-## Axis Primitives (Low-Level Motor Control)
+## Axis Primitives (Position)
 
 `at-stop? ( axis -- bool )`  
-Is the motor at the end of the `axis` position?
-
-`at-stop? ( axis -- bool )`  
-Is a stop hit in the coordinate position?
+Is a stop hit in the `axis` position?
 
 `current-pos ( axis -- n )`  
 Returns the current position of the given `axis`.
