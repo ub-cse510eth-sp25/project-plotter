@@ -11,7 +11,7 @@ include vars.fs
   cr
   ." 1. You may type alpha characters and a period. All text will be plotted in capital letters." cr
   ." 2. To redraw the editor, you may hit the [ENTER] key." cr
-  ." 3. You are limited to 1000 characters. All extra text will be truncated." cr
+  ." 3. You are limited to 70 characters. All extra text will be truncated." cr
   ." 4. Your may use the arrow keys and the [BACKSPACE] key to edit prior text." cr
   cr
 ;

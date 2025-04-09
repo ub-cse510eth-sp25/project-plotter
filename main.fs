@@ -1,11 +1,12 @@
 include ./text-editor/text-editor.fs
 include ./options/primitives.fs
 
-
 : introduce-dotty ( -- )
   page
   ." Hi, I'm Dotty!" cr cr
-  ." I started life as a 3D printer, but now I've found my true calling as a pen plotter. Whether it's geometric patterns, block letters, or custom designs, I'm here to bring your ideas to life on paper. Just send me your design, and watch as I dance across the page!"
+  ." I started life as a 3D printer, but now I've found my true calling as a pen plotter. Whether it's geometric patterns, block letters, or custom designs, I'm here to bring your ideas to life on paper."
+
+\ ." Just send me your design, and watch as I dance acros" ." s the page!"
 ;
 
 : plotter-options ( -- )
