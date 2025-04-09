@@ -1,5 +1,12 @@
 # Word List
 
+## Motor Control
+`step-forward ( -- )`
+Move one step forward (1.8 degrees)
+
+`step-backward ( -- )`
+Move one step backward (1.8 degrees)
+
 ## Axis Primitives
 
 `at-stop? ( axis -- bool )`  
