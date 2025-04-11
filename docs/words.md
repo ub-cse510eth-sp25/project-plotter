@@ -28,6 +28,17 @@ Sequence:
 Returns system to home/start position.  
 Written using `reset-axis`.
 
+## Motion Primitives
+
+`move-x ( distance -- )`
+Moves the x axis distance mm.
+
+`move-y ( distance -- )`
+Moves the y axis distance mm.
+
+`move-z ( distance -- )`
+Moves the z axis distance mm.
+
 ## Absolute Positioning
 
 `abs-x ( n -- )`  
