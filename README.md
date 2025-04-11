@@ -1,4 +1,4 @@
-# Pen Plotter
+# Dotty: The Pen Plotter
 
 ## Members
 Sabrina Johnson, Tiffany Cai, Al-kesna Foster, John Abramo, Nick Brown
@@ -7,9 +7,8 @@ Sabrina Johnson, Tiffany Cai, Al-kesna Foster, John Abramo, Nick Brown
 - [Zeptoforth](https://github.com/tabemann/zeptoforth)
 
 ## Hardware
-- Mini - RepRap Arduino-Mega-Compatible Motherboard (a.k.a. Mini-Rambo)
-- Raspberry Pi Pico 2 (RP2350)
-- Lulzbot Mini
+- Home brew motherboard using the Raspberry Pi Pico 2 (RP2350) and A4988 stepper motor drivers.
+- Parts and frame from a Lulzbot Mini 3d Printer
 
 ## Compiling/Running
 After cloning the repo run the following command:
