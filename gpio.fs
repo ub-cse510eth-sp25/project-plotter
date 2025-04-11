@@ -35,6 +35,6 @@
   step-delay ;
 
 : rotate-once ( -- )
-  200 0 d fao
+  200 0 do
     step-once
   loop ;
