@@ -13,6 +13,12 @@ Move 1 cm
 `step-cms ( n -- )`
 Move `n` cms (if negative it steps backwards, if positive it steps forwards)
 
+`set-cw ( -- )`
+Set direction to clockwise
+
+`set-ccw ( -- )`
+Set direction to counterclockwise
+
 ## Axis Primitives
 
 `at-stop? ( axis -- bool )`  
