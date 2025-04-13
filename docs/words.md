@@ -10,8 +10,8 @@ Move `n` steps backward (1.8 degrees)
 `step-cm ( -- )`
 Move 1 cm
 
-`step-cms ( n-- )`
-Move n cms (if negative it steps backwards, if positive it steps forwards)
+`step-cms ( n -- )`
+Move `n` cms (if negative it steps backwards, if positive it steps forwards)
 
 ## Axis Primitives
 
