@@ -4,8 +4,20 @@
 `step-forward ( n -- )`
 Move `n` steps forward (1.8 degrees)
 
-`step-backward ( -- )`
+`step-backward ( n -- )`
 Move `n` steps backward (1.8 degrees)
+
+`step-cm ( -- )`
+Move 1 cm
+
+`step-cms ( n -- )`
+Move `n` cms (if negative it steps backwards, if positive it steps forwards)
+
+`set-cw ( -- )`
+Set direction to clockwise
+
+`set-ccw ( -- )`
+Set direction to counterclockwise
 
 ## Axis Primitives
 
