@@ -31,11 +31,23 @@ Move `n` cms
 
 ## Axis Primitives
 
+`nStop? ( axis -- pin )`  
+Returns the pin constant given the axis (also a constant.)
+
 `at-stop? ( axis -- bool )`  
 Is a stop hit in the `axis` position?
 
-`current-pos ( axis -- n )`  
-Returns the current position of the given `axis`.
+<!-- `current-pos ( axis -- n )`  <!--! Currently not in use
+Returns the current position of the given `axis`. -->
+
+`x-to-home ( -- )`
+Moves x postion to origin.
+
+`y-to-home ( -- )`
+Moves y postion to origin.
+
+`z-to-home ( -- )`
+Moves z postion to origin.
 
 `reset-axis ( axis -- )`  
 Moves the axis motor to its reset position.  
