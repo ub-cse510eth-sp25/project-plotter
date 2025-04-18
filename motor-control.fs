@@ -87,23 +87,23 @@
 
 
 : step-x ( -- )
-  STEPx toggle-pin
+  high STEPx pin!
   1 ms
-  STEPx toggle-pin
+  low STEPx pin!
   1 ms
 ;
 
 : step-y ( -- )
-  STEPy toggle-pin
+  high STEPy pin!
   1 ms
-  STEPy toggle-pin
+  low STEPy pin!
   1 ms
 ;
 
 : step-z ( -- )
-  STEPz toggle-pin
+  high STEPz pin!
   1 ms
-  STEPz toggle-pin
+  low STEPz pin!
   1 ms
 ;
 
