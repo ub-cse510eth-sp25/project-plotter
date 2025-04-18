@@ -1,19 +1,19 @@
 \ Assumptions:
 \ 1. pin module was imported
 \ 2. nSTOP is an active-low input pin, so when it is low, it is active
-\ 3. 
 
 101 constant x \TODO: move these to an initialization script?
 102 constant y
 103 constant z
 
-1 constant nSTOPx \TODO: update with correct pin #s;
+1 constant nSTOPx \TODO: update with correct pin #s
 2 constant nSTOPy
 3 constant nSTOPz
 
-variable xpos
-variable ypos
-variable zpos
+\ defined in coordinates.fs \TODO: move to initialization script?
+\ variable cur-x
+\ variable cur-y
+\ variable cur-z
 
 : nStop ( axis -- pin )
   case
@@ -27,13 +27,13 @@ variable zpos
 ( \\\\\\\\\\\\\\\ )
 
 
-: current-pos ( axis -- n )
-  case
-    x of xpos @ endof
-    y of ypos @ endof
-    z of zpos @ endof
-  endcase
-;
+\ : current-pos ( axis -- n )
+\   case
+\     x of cur-x @ endof
+\     y of cur-y @ endof
+\     z of cur-z @ endof
+\   endcase
+\ ;
 
 
 ( \\\\\\\\\\\\\\\ )
@@ -59,27 +59,27 @@ variable zpos
 
 
 : x-to-home ( -- )
+  set-x-backward
   BEGIN
-    x at-stop?
-    WHILE step-backward-x \TODO: change forward or backward, not sure where the stops are
+    x at-stop? not
+    WHILE step-x \TODO: change forward or backward, not sure where the stops are
     REPEAT
-  0 xpos !
 ;
 
 : y-to-home ( -- )
+  set-y-backward
   BEGIN
-    y at-stop?
-    WHILE step-backward-y
+    y at-stop? not
+    WHILE step-y
     REPEAT
-  0 ypos !
 ;
 
 : z-to-home ( -- )
+  set-z-backward
   BEGIN
-    z at-stop?
-    WHILE step-backward-z
+    z at-stop? not
+    WHILE step-z
     REPEAT
-  0 zpos !
 ;
 
 ( \\\\\\\\\\\\\\\ )
@@ -90,20 +90,26 @@ variable zpos
   case
     x of
       x-to-home
-      5 step-mms-x \TODO: is this in the right direction?
+      set-x-forward
+      5 step-x-mms
       x-to-home
+      0 cur-x !
     endof
 
     y of
       y-to-home
-      5 step-mms-y
+      set-y-forward
+      5 step-y-mms
       y-to-home
+      0 cur-y !
     endof
 
     z of
       z-to-home
-      5 step-mms-z
+      set-z-forward
+      5 step-z-mms
       z-to-home
+      0 cur-z !
     endof
   endcase
 ;
