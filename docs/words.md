@@ -1,11 +1,33 @@
 # Word List
 
 ## Motor Control
-`step-forward ( n -- )`
-Move `n` steps forward (1.8 degrees)
+`import-pin ( -- )`
+Import pin module
+
+`initialize-pins ( -- )`
+set relevant pins to output state
+
+`set-cw ( -- )`
+set DIR pin to high
+
+`set-ccw ( -- )`
+set DIR pin to low
+
+`step ( -- )`
+Move gear a step (1.8 degrees)
+
+`step-forward ( -- )`
+Moves gear a step forward (1.8 degrees)
 
 `step-backward ( -- )`
-Move `n` steps backward (1.8 degrees)
+Move gear a step backward (1.8 degrees)
+
+`step-cm ( -- )`
+Move 1 cm
+
+`step-cms ( n -- )`
+Move `n` cms
+
 
 ## Axis Primitives
 
