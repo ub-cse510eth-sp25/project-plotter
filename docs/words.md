@@ -4,30 +4,59 @@
 `import-pin ( -- )`
 Import pin module
 
-`initialize-pins ( -- )`
-set relevant pins to output state
+`initialize-pins-x ( -- )`
+set relevant x-axis GPIO pins to output state
 
-`set-cw ( -- )`
-set DIR pin to high
+`initialize-pins-y ( -- )`
+set relevant y-axis GPIO pins to output state
 
-`set-ccw ( -- )`
-set DIR pin to low
+`initialize-pins-z ( -- )`
+set relevant z-axis GPIO pins to output state
 
-`step ( -- )`
-Move gear a step (1.8 degrees)
+`set-x-forward ( -- )`
+set DIRx pin to high
 
-`step-forward ( -- )`
-Moves gear a step forward (1.8 degrees)
+`set-y-forward ( -- )`
+set DIRy pin to high
 
-`step-backward ( -- )`
-Move gear a step backward (1.8 degrees)
+`set-z-forward ( -- )`
+set DIRz pin to high
 
-`step-cm ( -- )`
-Move 1 cm
+`set-x-rev ( -- )`
+set DIRx pin to low
 
-`step-cms ( n -- )`
-Move `n` cms
+`set-y-rev ( -- )`
+set DIRy pin to low
 
+`set-z-rev ( -- )`
+set DIRz pin to low
+
+`step-x ( -- )`
+Move x gear a step (1.8 degrees)
+
+`step-y ( -- )`
+Move y gear a step (1.8 degrees)
+
+`step-z ( -- )`
+Move z gear a step (1.8 degrees)
+
+`step-x-mm ( -- )`
+Move 1 mm in x-axis 
+
+`step-y-mm ( -- )`
+Move 1 mm in y-axis
+
+`step-z-mm ( -- )`
+Move 1 mm in z-axis 
+
+`step-x-mms ( n -- )`
+Move `n` mms in x-axis
+
+`step-y-mms ( n -- )`
+Move `n` mms in y-axis
+
+`step-z-mms ( n -- )`
+Move `n` mms in z-axis
 
 ## Axis Primitives
 
