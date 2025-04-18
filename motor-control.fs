@@ -54,15 +54,15 @@
 ( \\\\\\\\\\\\\\\ )
 
 
-: set-cw-x ( -- )
+: set-x-forward ( -- )
   high DIRx pin! \ set direction pin to high
 ;
 
-: set-cw-y ( -- )
+: set-y-forward ( -- )
   high DIRy pin! \ set direction pin to high
 ;
 
-: set-cw-z ( -- )
+: set-z-forward ( -- )
   high DIRz pin! \ set direction pin to high
 ;
 
@@ -70,15 +70,15 @@
 ( \\\\\\\\\\\\\\\ )
 
 
-: set-ccw-x ( -- )
+: set-x-rev ( -- )
   low DIRx pin!
 ;
 
-: set-ccw-y ( -- )
+: set-y-rev ( -- )
   low DIRy pin!
 ;
 
-: set-ccw-z ( -- )
+: set-z-rev ( -- )
   low DIRz pin!
 ;
 
@@ -111,53 +111,15 @@
 ( \\\\\\\\\\\\\\\ )
 
 
-: step-forward-x ( -- )
-  set-cw-x
-  step-x
-;
-
-: step-forward-y ( -- )
-  set-cw-y
-  step-y
-;
-
-: step-forward-z ( -- )
-  set-cw-z
-  step-z
-;
-
-
-( \\\\\\\\\\\\\\\ )
-
-
-: step-backward-x ( -- )
-  set-ccw-x
-  step-x
-;
-
-: step-backward-y ( -- )
-  set-ccw-y
-  step-y
-;
-
-: step-backward-z ( -- )
-  set-ccw-z
-  step-z
-;
-
-
-( \\\\\\\\\\\\\\\ )
-
-
-: step-mm-x ( -- ) \ 3 steps per mm
+: step-x-mm ( -- ) \ 3 steps per mm
   3 0 DO step-x LOOP;
 ;
 
-: step-mm-y ( -- ) \ 3 steps per mm
+: step-y-mm ( -- ) \ 3 steps per mm
   3 0 DO step-y LOOP;
 ;
 
-: step-mm-z ( -- ) \ 100 steps per mm
+: step-z-mm ( -- ) \ 100 steps per mm
   100 0 DO step-z LOOP;
 ;
 
@@ -165,12 +127,12 @@
 ( \\\\\\\\\\\\\\\ )
 
 
-: step-mms-x ( n-- )
+: step-x-mms ( n-- )
   0 DO step-mm-x LOOP
 ;
 
-: step-mms-y ( n-- )
+: step-y-mms ( n-- )
   0 DO step-mm-y LOOP ;
 
-: step-mms-z ( n-- )
+: step-z-mms ( n-- )
   0 DO step-mm-z LOOP ;
