@@ -30,14 +30,32 @@ Written using `reset-axis`.
 
 ## Motion Primitives
 
-`move-x ( distance -- )`
-Moves the x axis distance mm.
+`step-z ( -- )`   
+Moves the x axis one step.
 
-`move-y ( distance -- )`
-Moves the y axis distance mm.
+`step-z ( -- )`   
+Moves the x axis one step.
 
-`move-z ( distance -- )`
-Moves the z axis distance mm.
+`step-z ( -- )`   
+Moves the z axis one step.
+
+`set-x-rev ( -- )`   
+Sets the x axis to step in reverse.
+
+`set-x-forward ( -- )`   
+Sets the x axis to step forward.
+
+`set-y-rev ( -- )`   
+Sets the y axis to step in reverse.
+
+`set-y-forward ( -- )`   
+Sets the y axis to step forward.
+
+`set-z-rev ( -- )`   
+Sets the z axis to step in reverse.
+
+`set-z-forward ( -- )`   
+Sets the z axis to step forward.
 
 ## Absolute Positioning
 
