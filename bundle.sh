@@ -22,7 +22,7 @@ fi
 if [ -d "options" ];
 then
     echo "\ -- options files -------- " >> $OUTPUT
-    cat options/primitives.fs >> $OUTPUT
+    cat options/programs.fs >> $OUTPUT
 fi
 
 # driver file

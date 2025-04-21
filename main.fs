@@ -1,5 +1,5 @@
 include ./text-editor/text-editor.fs
-include ./options/primitives.fs
+include ./options/programs.fs
 
 : introduce-dotty ( -- )
   page

@@ -1,4 +1,4 @@
-include vars.fs
+\ include vars.fs
 
 : logo ( -- )
   cr
@@ -27,7 +27,7 @@ include vars.fs
 
 : draw-buffer ( addr -- )
   cr
-  cursor-pos @ 0 do 
+  70 0 do 
     dup i + c@ emit
   loop
   drop
@@ -49,11 +49,24 @@ include vars.fs
   ." Character count: " total-chars @ . ." /70" cr
 ;
 
-: alpha? ( c -- flag )
+: valid-char? ( char -- flag )
+  dup 
+  dup [CHAR] a >= over [CHAR] z <= and
+
+  swap dup [CHAR] A >= over [CHAR] Z <= and
+  rot or
+
+  swap dup [CHAR] . = 
+  rot or
+
+  swap dup BL = 
+  rot or
+
+  swap drop
 ;
 
 : add-char ( c addr -- )
-  cursor-pos @ 69 < if
+  total-chars @ 69 < if
     swap over cursor-pos @ + c!
     1 cursor-pos +!
     1 total-chars +!
@@ -68,7 +81,7 @@ include vars.fs
 
 : key-escape 27 ;
 
-: key-backspace 8 ;
+: key-backspace 127 ;
 
 : user-input ( -- )
   begin
@@ -83,8 +96,12 @@ include vars.fs
         drop
         exit
       else
-        dup emit
-	buffer add-char
+        dup valid-char? if
+          dup emit
+          buffer add-char
+        else
+          drop
+        then
       then
     then
   again

@@ -1,5 +1,6 @@
-include io.fs
 include vars.fs
+include io.fs
+include ../options/characters.fs
 
 : text-edit ( -- )
    total-chars set-zero
