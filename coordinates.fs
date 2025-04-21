@@ -86,9 +86,50 @@ variable cur-z
 ;
 
 : move-to-abs ( x y -- )
-    ( this is more complicated than the word
-    list suggests due to needing to move on
-    a diagonal path )
+    dup cur-y @ ( x y y cur-y )
+    \ if there is no y movement, this is the same as move x
+    = if ( x y )
+	drop ( x )
+	move-to-abs-x ( )
+	exit
+    then ( x y )
+    swap ( y x )
+    dup cur-x @ ( y x x cur-x )
+    \ if there is no x movement, this is the same as move y
+    = if ( y x )
+	drop ( y )
+	move-to-abs-y ( )
+	exit
+    then ( y x )
+    2dup ( y x y x )
+    \ set the x direction
+    cur-x @ > if
+	set-x-forward
+    else
+	set-x-rev
+    then
+    \ set the y direction
+    cur-y @ > if
+	set-y-forward
+    else
+	set-y-rev
+    then
+    2dup ( y x y x )
+    abs swap abs swap ( y x y x )
+    x-steps-per-mm * ( y x y x-steps )
+    swap
+    y-steps-per-mm * ( y x x-steps y-steps )
+    \ determine which axis we should compute against
+    2dup ( y x x-steps y-steps x-steps y-steps )
+    > if
+	\ there are more x-steps than y-steps
+	\ for every x-step, compute its y val
+	1 .
+    else
+	\ there are more y-steps than x-steps
+	\ for every y-step, compute its x val
+	2 .
+    then 
 ;
 
 : rel-x ( n -- )
