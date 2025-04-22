@@ -124,12 +124,60 @@ variable cur-z
     > if
 	\ there are more x-steps than y-steps
 	\ for every x-step, compute its y val
-	1 .
+
+	\ compute slope
+	s>d d>f s>d d>f
+	f/
+
+	drop ( y x x-steps )
+	0 ( y x x-steps y-steps-taken )
+	swap
+
+	0 do
+	    dup
+	    fdup
+	    i s>d d>f
+	    f*
+	    f>d d>s ( y x y-steps-taken y-steps-taken y-target )
+	    x-step
+	    <> if
+		y-step
+		1+
+	    then
+	loop
+	drop
+	fdrop
     else
 	\ there are more y-steps than x-steps
 	\ for every y-step, compute its x val
-	2 .
-    then 
+
+	\ compute slope
+	swap
+	s>d d>f s>d d>f
+	f/
+
+	swap
+	drop ( y x y-steps )
+	0 ( y x y-steps x-steps-taken )
+	swap
+
+	0 do
+	    dup
+	    fdup
+	    i s>d d>f
+	    f*
+	    f>d d>s ( y x x-steps-taken x-steps-taken x-target )
+	    y-step
+	    <> if
+		x-step
+		1+
+	    then
+	loop
+	drop
+	fdrop
+    then ( y x )
+    cur-x !
+    cur-y !
 ;
 
 : rel-x ( n -- )
