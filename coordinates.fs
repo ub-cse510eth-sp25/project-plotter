@@ -86,9 +86,98 @@ variable cur-z
 ;
 
 : move-to-abs ( x y -- )
-    ( this is more complicated than the word
-    list suggests due to needing to move on
-    a diagonal path )
+    dup cur-y @ ( x y y cur-y )
+    \ if there is no y movement, this is the same as move x
+    = if ( x y )
+	drop ( x )
+	move-to-abs-x ( )
+	exit
+    then ( x y )
+    swap ( y x )
+    dup cur-x @ ( y x x cur-x )
+    \ if there is no x movement, this is the same as move y
+    = if ( y x )
+	drop ( y )
+	move-to-abs-y ( )
+	exit
+    then ( y x )
+    2dup ( y x y x )
+    \ set the x direction
+    cur-x @ > if
+	set-x-forward
+    else
+	set-x-rev
+    then
+    \ set the y direction
+    cur-y @ > if
+	set-y-forward
+    else
+	set-y-rev
+    then
+    2dup ( y x y x )
+    abs swap abs swap ( y x y x )
+    x-steps-per-mm * ( y x y x-steps )
+    swap
+    y-steps-per-mm * ( y x x-steps y-steps )
+    \ determine which axis we should compute against
+    2dup ( y x x-steps y-steps x-steps y-steps )
+    > if
+	\ there are more x-steps than y-steps
+	\ for every x-step, compute its y val
+
+	\ compute slope
+	s>d d>f s>d d>f
+	f/
+
+	drop ( y x x-steps )
+	0 ( y x x-steps y-steps-taken )
+	swap
+
+	0 do
+	    dup
+	    fdup
+	    i s>d d>f
+	    f*
+	    f>d d>s ( y x y-steps-taken y-steps-taken y-target )
+	    x-step
+	    <> if
+		y-step
+		1+
+	    then
+	loop
+	drop
+	fdrop
+    else
+	\ there are more y-steps than x-steps
+	\ for every y-step, compute its x val
+
+	\ compute slope
+	swap
+	s>d d>f s>d d>f
+	f/
+
+	swap
+	drop ( y x y-steps )
+	0 ( y x y-steps x-steps-taken )
+	swap
+
+	0 do
+	    dup
+	    fdup
+	    i s>d d>f
+	    f*
+	    f>d d>s ( y x x-steps-taken x-steps-taken x-target )
+	    y-step
+	    <> if
+		x-step
+		1+
+	    then
+	loop
+	drop
+	fdrop
+    then ( y x )
+    cur-x !
+    cur-y !
 ;
 
 : rel-x ( n -- )
