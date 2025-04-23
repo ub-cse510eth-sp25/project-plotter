@@ -1,7 +1,10 @@
 create buffer 70 allot
+create temp-buffer 70 allot
+
+variable shifts
+variable index
 
 variable total-chars
-variable cursor-pos
 
 create last-action 20 allot
 S" saved" last-action place

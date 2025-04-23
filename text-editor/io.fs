@@ -8,11 +8,12 @@
 ;
 
 : editor-rules ( -- )
-  cr ." ╓───────────────────────────────────────╖"
-  cr ." ║ Instructions:                         ║"
-  cr ." ║ - L/R arrow keys to navigate.	        ║"
-  cr ." ║ - ENTER to save or give exit prompt.  ║"
-  cr ." ╙───────────────────────────────────────╜"
+  cr ." ╓───────────────────────────────────────────────────╖"
+  cr ." ║ Instructions:                                     ║"
+  cr ." ║ - L/R arrow keys to navigate.	                    ║"
+  cr ." ║ - ENTER to save or give exit prompt.              ║"
+  cr ." ║ - Valid chararcters are (A-Z, a-z, '.' and ' ').  ║"
+  cr ." ╙───────────────────────────────────────────────────╜"
   cr cr ." Buffer: " cr
 ;
 
@@ -21,8 +22,14 @@
     32 over i + c!
   loop
   drop
-  cursor-pos set-zero
   total-chars set-zero
+;
+
+: clear-chars-from-buffer ( addr -- )
+  70 0 do 
+    32 over i + c!
+  loop
+  drop
 ;
 
 : draw-buffer ( addr -- )
@@ -35,7 +42,7 @@
 ;
 
 : word-count ( -- )
-  ." Remaining characetrs: " 69 total-chars @ - . cr
+  ." Remaining valid characetrs: " 70 total-chars @ - . cr
   ." Last action: " last-action count type cr
 ;
 
@@ -55,44 +62,74 @@
   swap drop
 ;
 
-: add-char ( c addr -- )
-  total-chars @ 69 < if
-    swap over cursor-pos @ + c!
-    1 cursor-pos +!
-    1 total-chars +!
-    drop
-  else
-    2drop
-  then
-;
-
 : go-to-position ( row col -- )
   esc[ swap 0 .r [char] ; emit 0 .r [char] H emit
 ;
 
 : clear-screen-from-cursor ( -- )
-  esc[ ." J"  \ Clears from cursor to end of screen
+  esc[ ." J"  ( clears from cursor to end of screen )
+;
+
+: filter-buffer ( -- )
+  \ clear the temp buffer
+  temp-buffer clear-chars-from-buffer
+  
+  \ update tracking vars
+  0 shifts !
+  0 index !
+  
+  \ process buffer (take valid chars, leave the others)
+  total-chars @ 0 ?do
+    buffer i + c@ dup valid-char? invert if
+      drop
+      1 shifts +!
+    else
+      \ copy valid chars to temp
+      temp-buffer index @ + c!
+      1 index +!
+    then
+  loop
+  
+  \ update total chars to include only valid chars
+  total-chars @ shifts @ - total-chars !
+  
+  \ wipe main buffer
+  buffer clear-chars-from-buffer
+  
+  \ copy temp back to main buffer
+  total-chars @ 0 ?do
+    temp-buffer i + c@ buffer i + c!
+  loop
 ;
 
 : user-input ( -- )
-  begin
-    \ Display current buffer content
+  \ place cursor at the beginning of the buffer
+  14 0 go-to-position
+
+  begin  
+    \ position cursor at end of buffer for editing
+    14 total-chars @ 1 + go-to-position
+    
+    \ read input, preserving existing content
+    buffer total-chars @ + 70 total-chars @ - accept
+    total-chars @ + total-chars !
+
+    \ filter the buffer
+    filter-buffer
+    
+    \ display updated buffer content
     14 0 go-to-position
     clear-screen-from-cursor
     buffer total-chars @ type
     
-    \ Position cursor back at beginning of line for editing
+    \ position cursor at end of buffer again
     14 total-chars @ 1 + go-to-position
     
-    \ Read input, preserving existing content
-    buffer total-chars @ + 70 total-chars @ - accept
-    total-chars @ + total-chars !
-    
-    \ Show word count
+    \ show word count
     16 0 go-to-position
     word-count
     
-    \ Ask if done
+    \ ask user if they are done
     ." Done? (y/[any key]): "
     key dup emit
     [CHAR] y = 
