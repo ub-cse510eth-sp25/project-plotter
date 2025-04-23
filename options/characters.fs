@@ -79,7 +79,7 @@
 ;
 
 : plot-buffer ( -- )
-  cursor-pos @ 0= if
+  total-chars @ 0= if
      cr
      ." buffer empty"
      drop

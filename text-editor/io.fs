@@ -1,6 +1,6 @@
-\ include vars.fs
 
 : logo ( -- )
+  page
   cr
   ." +-+-+-+-+-+-+" cr
   ." |E|D|I|T|O|R|" cr
@@ -8,12 +8,13 @@
 ;
 
 : editor-rules ( -- )
-  cr
-  ." 1. You may type alpha characters and a period. All text will be plotted in capital letters." cr
-  ." 2. To redraw the editor, you may hit the [ENTER] key." cr
-  ." 3. You are limited to 70 characters. All extra text will be truncated." cr
-  ." 4. Your may use the arrow keys and the [BACKSPACE] key to edit prior text." cr
-  cr
+  cr ." ╓───────────────────────────────────────────────────╖"
+  cr ." ║ Instructions:                                     ║"
+  cr ." ║ - L/R arrow keys to navigate.	                    ║"
+  cr ." ║ - ENTER to save or give exit prompt.              ║"
+  cr ." ║ - Valid chararcters are (A-Z, a-z, '.' and ' ').  ║"
+  cr ." ╙───────────────────────────────────────────────────╜"
+  cr cr ." Buffer: " cr
 ;
 
 : clear-buffer ( addr -- )
@@ -21,8 +22,14 @@
     32 over i + c!
   loop
   drop
-  cursor-pos set-zero
   total-chars set-zero
+;
+
+: clear-chars-from-buffer ( addr -- )
+  70 0 do 
+    32 over i + c!
+  loop
+  drop
 ;
 
 : draw-buffer ( addr -- )
@@ -34,19 +41,9 @@
   cr
 ;
 
-: pretty-print ( addr -- )
-  cr
-  cursor-pos @ 0 do
-    dup i + c@ emit
-    i 1+ 7 mod 0= if cr then
-    i 69 = if leave then
-  loop
-  drop
-  cr
-;
-
 : word-count ( -- )
-  ." Character count: " total-chars @ . ." /70" cr
+  ." Remaining valid characetrs: " 70 total-chars @ - . cr
+  ." Last action: " last-action count type cr
 ;
 
 : valid-char? ( char -- flag )
@@ -65,44 +62,76 @@
   swap drop
 ;
 
-: add-char ( c addr -- )
-  total-chars @ 69 < if
-    swap over cursor-pos @ + c!
-    1 cursor-pos +!
-    1 total-chars +!
-    drop
-  else
-    2drop
-    ." Buffer full!"
-  then
+: go-to-position ( row col -- )
+  esc[ swap 0 .r [char] ; emit 0 .r [char] H emit
 ;
 
-: key-enter 13 ;
+: clear-screen-from-cursor ( -- )
+  esc[ ." J"  ( clears from cursor to end of screen )
+;
 
-: key-escape 27 ;
-
-: key-backspace 127 ;
+: filter-buffer ( -- )
+  \ clear the temp buffer
+  temp-buffer clear-chars-from-buffer
+  
+  \ update tracking vars
+  0 shifts !
+  0 index !
+  
+  \ process buffer (take valid chars, leave the others)
+  total-chars @ 0 ?do
+    buffer i + c@ dup valid-char? invert if
+      drop
+      1 shifts +!
+    else
+      \ copy valid chars to temp
+      temp-buffer index @ + c!
+      1 index +!
+    then
+  loop
+  
+  \ update total chars to include only valid chars
+  total-chars @ shifts @ - total-chars !
+  
+  \ wipe main buffer
+  buffer clear-chars-from-buffer
+  
+  \ copy temp back to main buffer
+  total-chars @ 0 ?do
+    temp-buffer i + c@ buffer i + c!
+  loop
+;
 
 : user-input ( -- )
-  begin
-    key dup key-enter = if
-      ." [ENTER] was hit" cr
-      buffer draw-buffer
-      word-count
-      drop
-    else
-      dup key-escape = if
-        ." [ESCAPE] was hit" cr
-        drop
-        exit
-      else
-        dup valid-char? if
-          dup emit
-          buffer add-char
-        else
-          drop
-        then
-      then
-    then
-  again
+  \ place cursor at the beginning of the buffer
+  14 0 go-to-position
+
+  begin  
+    \ position cursor at end of buffer for editing
+    14 total-chars @ 1 + go-to-position
+    
+    \ read input, preserving existing content
+    buffer total-chars @ + 70 total-chars @ - accept
+    total-chars @ + total-chars !
+
+    \ filter the buffer
+    filter-buffer
+    
+    \ display updated buffer content
+    14 0 go-to-position
+    clear-screen-from-cursor
+    buffer total-chars @ type
+    
+    \ position cursor at end of buffer again
+    14 total-chars @ 1 + go-to-position
+    
+    \ show word count
+    16 0 go-to-position
+    word-count
+    
+    \ ask user if they are done
+    ." Done? (y/[any key]): "
+    key dup emit
+    [CHAR] y = 
+  until
 ;

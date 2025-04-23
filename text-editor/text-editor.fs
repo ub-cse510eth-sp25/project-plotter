@@ -4,7 +4,6 @@ include ../options/characters.fs
 
 : text-edit ( -- )
    total-chars set-zero
-   cursor-pos set-zero
    buffer clear-buffer
    user-input
 ;
