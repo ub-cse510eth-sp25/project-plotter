@@ -2,9 +2,9 @@
 \ 1. pin module was imported
 \ 2. nSTOP is an active-low input pin, so when it is low, it is active
 
-101 constant x \TODO: move these to an initialization script?
-102 constant y
-103 constant z
+101 constant X \TODO: move these to an initialization script?
+102 constant Y
+103 constant Z
 
 1 constant nSTOPx \TODO: update with correct pin #s
 2 constant nSTOPy
@@ -17,9 +17,9 @@
 
 : nStop ( axis -- pin )
   case
-    x of nSTOPx endof
-    y of nSTOPy endof
-    z of nSTOPz endof
+    X of nSTOPx endof
+    Y of nSTOPy endof
+    Z of nSTOPz endof
   endcase
 ;
 
@@ -61,7 +61,7 @@
 : x-to-home ( -- )
   set-x-backward
   BEGIN
-    x at-stop? not
+    X at-stop? not
     WHILE step-x \TODO: change forward or backward, not sure where the stops are
     REPEAT
 ;
@@ -69,7 +69,7 @@
 : y-to-home ( -- )
   set-y-backward
   BEGIN
-    y at-stop? not
+    Y at-stop? not
     WHILE step-y
     REPEAT
 ;
@@ -77,7 +77,7 @@
 : z-to-home ( -- )
   set-z-backward
   BEGIN
-    z at-stop? not
+    Z at-stop? not
     WHILE step-z
     REPEAT
 ;
@@ -88,7 +88,7 @@
 
 : reset-axis ( axis -- )
   case
-    x of
+    X of
       x-to-home
       set-x-forward
       5 step-x-mms
@@ -96,7 +96,7 @@
       0 cur-x !
     endof
 
-    y of
+    Y of
       y-to-home
       set-y-forward
       5 step-y-mms
@@ -104,7 +104,7 @@
       0 cur-y !
     endof
 
-    z of
+    Z of
       z-to-home
       set-z-forward
       5 step-z-mms
@@ -119,7 +119,7 @@
 
 
 : reset ( -- )
-  x reset-axis
-  y reset-axis
-  z reset-axis
+  X reset-axis
+  Y reset-axis
+  Z reset-axis
 ;
