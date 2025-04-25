@@ -1,4 +1,7 @@
 
+( prototype for other ufn. is redefined later )
+: valid-char? ( -- ) ;
+
 ( takes char and return uppercase version )
 : to-upper ( char -- uppercase-char )
   dup [CHAR] a >= over [CHAR] z <= and if

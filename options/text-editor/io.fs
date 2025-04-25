@@ -62,14 +62,6 @@
   swap drop
 ;
 
-: go-to-position ( row col -- )
-  esc[ swap 0 .r [char] ; emit 0 .r [char] H emit
-;
-
-: clear-screen-from-cursor ( -- )
-  esc[ ." J"  ( clears from cursor to end of screen )
-;
-
 : filter-buffer ( -- )
   \ clear the temp buffer
   temp-buffer clear-chars-from-buffer
@@ -134,4 +126,5 @@
     key dup emit
     [CHAR] y = 
   until
+  buffer plot-buffer
 ;
