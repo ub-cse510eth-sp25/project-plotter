@@ -15,12 +15,24 @@
   15 rel-y
 ;
 
+: stem-reverse ( -- )
+  -15 rel-y
+;
+
 ( used for: A, Y )
 : leg ( -- )
   12 rel-y
 ;
 
+: leg-reverse ( -- )
+  -12 rel-y
+;
+
 ( used for: S, R, P, G )
 : half-stem ( -- )
   8 rel-y
+;
+
+: half-stem-reverse ( -- )
+  -8 rel-y
 ;
