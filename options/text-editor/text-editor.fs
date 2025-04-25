@@ -1,6 +1,3 @@
-include vars.fs
-include io.fs
-include ../options/characters.fs
 
 : text-edit ( -- )
    total-chars set-zero
@@ -13,4 +10,6 @@ include ../options/characters.fs
   logo
   editor-rules
   text-edit
+  \ link back to main program?
 ;
+
