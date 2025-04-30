@@ -9,6 +9,6 @@
 
 \ lowers the pen to the paper
 : pen-down ( -- )
-    set-z-backpaward
+    set-z-backward
     pen-down-height abs-z
 ;
