@@ -10,6 +10,12 @@
 2 constant nSTOPy
 3 constant nSTOPz
 
+( create global variables to maintain the current position of the pen between words )
+variable cur-x
+variable cur-y
+variable cur-z
+
+
 \ defined in coordinates.fs \ TODO: move to initialization script?
 \ variable cur-x
 \ variable cur-y

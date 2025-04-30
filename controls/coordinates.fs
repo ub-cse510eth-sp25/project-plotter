@@ -3,10 +3,6 @@
 6 constant y-steps-per-mm
 100 constant z-steps-per-mm
 
-( create global variables to maintain the current position of the pen between words )
-variable cur-x
-variable cur-y
-variable cur-z
 
 : abs-x ( n -- )
     dup ( n n -- )
@@ -90,7 +86,7 @@ variable cur-z
     \ if there is no y movement, this is the same as move x
     = if ( x y )
 	drop ( x )
-	move-to-abs-x ( )
+	abs-x ( )
 	exit
     then ( x y )
     swap ( y x )
@@ -98,7 +94,7 @@ variable cur-z
     \ if there is no x movement, this is the same as move y
     = if ( y x )
 	drop ( y )
-	move-to-abs-y ( )
+	abs-y ( )
 	exit
     then ( y x )
     2dup ( y x y x )
