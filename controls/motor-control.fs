@@ -39,15 +39,15 @@ import-pin
 ( \\\\\\\\\\\\\\\ )
 
 
-: set-x-rev ( -- )
+: set-x-backward ( -- )
   low DIRx pin!
 ;
 
-: set-y-rev ( -- )
+: set-y-backward ( -- )
   low DIRy pin!
 ;
 
-: set-z-rev ( -- )
+: set-z-backward ( -- )
   low DIRz pin!
 ;
 
