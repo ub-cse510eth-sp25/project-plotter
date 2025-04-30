@@ -111,7 +111,7 @@
     
     \ display updated buffer content
     14 0 go-to-position
-    clear-screen-from-cursor
+    \ clear-screen-from-cursor
     buffer total-chars @ type
     
     \ position cursor at end of buffer again
