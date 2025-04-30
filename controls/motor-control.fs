@@ -13,32 +13,12 @@
 17 constant DIRz \ GPIO 17
 16 constant STEPz \ GPIO 16
 
-\ update w correct GPIOs^
 
 : import-pin ( -- )
   pin import
 ;
 
 import-pin
-
-: intialize-pins-x ( -- ) \ sets all pins to output state
-  DIRx output-pin
-  STEPx output-pin
-;
-
-: intialize-pins-y ( -- ) \ sets all pins to output state
-  DIRy output-pin
-  STEPy output-pin
-;
-
-: intialize-pins-z ( -- ) \ sets all pins to output state
-  DIRz output-pin
-  STEPz output-pin
-;
-
-
-( \\\\\\\\\\\\\\\ )
-
 
 : set-x-forward ( -- )
   high DIRx pin! \ set direction pin to high
@@ -66,6 +46,25 @@ import-pin
 
 : set-z-rev ( -- )
   low DIRz pin!
+;
+
+
+: intialize-pins-x ( -- ) \ sets all pins to output state
+  DIRx output-pin
+  STEPx output-pin
+  set-x-forward
+;
+
+: intialize-pins-y ( -- ) \ sets all pins to output state
+  DIRy output-pin
+  STEPy output-pin
+  set-y-forward
+;
+
+: intialize-pins-z ( -- ) \ sets all pins to output state
+  DIRz output-pin
+  STEPz output-pin
+  set-z-forward
 ;
 
 
