@@ -27,7 +27,6 @@ include ./options/writing/programs.fs
 ;
 
 : exit-program ( -- )
-  page
   introduce-dotty
   plotter-options
 ;
