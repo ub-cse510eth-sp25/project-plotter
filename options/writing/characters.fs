@@ -410,7 +410,9 @@
   else
     cr
     total-chars @ 0 do
-    buffer i + c@ draw-char
+      buffer i + c@ draw-char
+      next-char
+      i 1+ 7 mod 0= if new-line then
     loop
     cr
   then
