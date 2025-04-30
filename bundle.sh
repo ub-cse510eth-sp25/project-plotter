@@ -37,10 +37,11 @@ echo "\ -- spacing --------" >> $OUTPUT
 cat drawing/spacing.fs | grep -v "include" >> $OUTPUT
 echo "" >> $OUTPUT
 
+# TODO: commenting out for testing
 # terminal.fs
-echo "\ -- terminal utilities --------" >> $OUTPUT
-cat utils/terminal.fs | grep -v "include" >> $OUTPUT
-echo "" >> $OUTPUT
+# echo "\ -- terminal utilities --------" >> $OUTPUT
+# cat utils/terminal.fs | grep -v "include" >> $OUTPUT
+# echo "" >> $OUTPUT
 
 # vars.fs
 echo "\ -- variables --------" >> $OUTPUT
