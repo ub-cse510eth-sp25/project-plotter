@@ -1,13 +1,13 @@
 : horizontal-line ( len-- )
-  lower-pen
+  pen-down
   rel-x
-  lift-pen
+  pen-up
 ;
 
 : vertical-line ( len-- )
-  lower-pen
+  pen-down
   rel-y
-  lift-pen
+  pen-up
 ;
 
 ( stem - used for: B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, T, U )
