@@ -37,6 +37,316 @@
 : plot-y 89 emit ;
 : plot-z 90 emit ;
 
+: plot-a ( -- )
+  15 rel-y
+  pen-down
+  leg-reverse
+  5 -3 move-to-rel
+  5 3 move-to-rel
+  leg
+  leg-reverse
+  -10 rel-x
+  pen-up
+  ( move to top right )
+;
+
+: plot-b ( -- )
+  15 rel-y
+  pen-down
+  stem-reverse
+  5 rel-x
+  ( curves )
+  5 3.5 move-to-rel
+  -5 3.5 move-to-rel
+  -5 rel-x
+  5 rel-x
+  ( curves )
+  5 3.5 move-to-rel
+  -5 3.5 move-to-rel
+  -5 rel-x
+  ( we are at the left edge)
+  pen-up
+  10 rel-x ( at bottom right )
+;
+
+: plot-c ( -- )
+  10 rel-x
+  pen-down
+  arm-reverse
+  stem
+  arm-reverse
+  pen-up
+;
+
+: plot-d ( -- )
+  15 rel-y
+  pen-down
+  stem-reverse
+  4 rel-x
+  6 2.5 move-to-rel
+  10 rel-y
+  -6 2.5 move-to-rel
+  -4 rel-x
+  ( we are at the left edge)
+  pen-up
+  10 rel-x ( at bottom right )
+;
+
+: plot-e ( -- )
+    \ assumes starting at botom left corner
+    10 rel-x
+    pen-down
+    -10 rel-x
+    15 rel-y
+    10 rel-x
+    pen-up
+    -10 -7 move-to-rel
+    pen-down
+    8 rel-x
+    pen-up
+    7 2 move-to-rel
+    \ finishes at the top right corner
+;
+
+: plot-f ( -- )
+    \ assumes starting at botom left corner
+    pen-down
+    15 rel-y
+    10 rel-x
+    pen-up
+    -10 -7 move-to-rel
+    pen-down
+    8 rel-x
+    pen-up
+    7 2 move-to-rel
+    \ finishes at the top right corner
+;
+
+: plot-g ( -- )
+  10 rel-x
+  pen-down
+  arm-reverse
+  stem
+  arm
+  half-stem-reverse
+  half-arm-reverse
+  pen-up
+  half-arm
+  half-stem
+;
+
+: plot-h ( -- )
+    \ assumes starting at botom left corner
+    pen-down
+    15 rel-y
+    pen-up
+    -7 rel-y
+    pen-down
+    10 rel-x
+    pen-up
+    -8 rel-y
+    pen-down
+    15 rel-y
+    pen-up
+    \ finishes at the top right corner
+;
+
+: plot-i ( -- )
+    \ assumes starting at botom left corner
+    pen-down
+    10 rel-x
+    pen-up
+    -5 rel-x
+    pen-down
+    15 rel-y
+    pen-up
+    -5 rel-x
+    pen-down
+    10 rel-x
+    pen-up
+    \ finishes at the top right corner
+;
+
+: plot-j ( -- )
+  10 rel-x
+  pen-down
+  stem
+  half-arm-reverse
+  -5 -3.5 move-to-rel
+  pen-up
+  5 3.5 move-to-rel
+  half-arm
+;
+
+: plot-k ( -- )
+  15 rel-y
+  stem-reverse
+  7.5 rel-y
+  10 -7.5 move-to-rel
+  -10 7.5 move-to-rel
+  10 7.5 move-to-rel
+  pen-up ( already at bottom right )
+;
+
+: plot-l ( -- )
+    \ assumes starting at botom left corner
+    10 rel-x
+    pen-down
+    -10 rel-x
+    15 rel-y
+    pen-up
+    10 rel-x
+    \ finishes at the top right corner
+;
+
+: plot-m ( -- )
+  15 rel-y
+  pen-down
+  stem-reverse
+  5 3 move-to-rel
+  5 -3 move-to-rel
+  stem
+  pen-up
+  ( move to top right )
+;
+
+: plot-n ( -- )
+  15 rel-y
+  pen-down
+  reverse-stem
+  10 15 move-to-rel
+  reverse-stem
+  pen-up
+  ( move to top right )
+;
+
+: plot-o ( -- )
+  10 15 move-to-rel
+  pen-down
+  arm-reverse
+  stem-reverse
+  arm
+  stem
+  pen-up
+;
+
+: plot-p ( -- )
+  15 rel-y
+  pen-down
+  stem-reverse
+  10 rel-x
+  6 rel-y
+  -10 rel-x
+  pen-up
+  10 rel-x
+  9 rel-y ( at bottom right )
+;
+
+: plot-q ( -- )
+  10 rel-x
+  pen-down
+  arm-reverse
+  leg
+  3 rel-x
+  7 -5 move-to-rel
+  pen-up
+  -7 rel-x
+  pen-down
+  7 5 move-to-rel
+  pen-up
+;
+
+: plot-r ( -- )
+  15 rel-y
+  pen-down
+  stem-reverse
+  10 rel-x
+  6 rel-y
+  -10 rel-x
+  10 9 move-to-rel
+  pen-up ( at bottom right )
+;
+
+: plot-s ( -- )
+  10 rel-x
+  arm-reverse
+  half-stem
+  arm
+  half-stem
+  arm-reverse
+  pen-up
+  10 rel-x
+;
+
+: plot-t ( -- )
+    \ assumes starting at botom left corner
+    5 rel-x
+    pen-down
+    15 rel-y
+    pen-up
+    -5 rel-x
+    pen-down
+    10 rel-x
+    pen-up
+    \ finishes at the top right corner
+;
+
+: plot-u ( -- )
+  pen-down
+  15 rel-y
+  10 rel-x
+  stem-reverse
+  pen-up
+  15 rel-y ( at bottom right )
+;
+
+: plot-v ( -- )
+  pen-down
+  5 15 move-to-rel
+  5 -15 move-to rel
+  pen-up
+  ( move to top right )
+;
+
+: plot-w ( -- )
+  pen-down
+  stem
+  5 -3 move-to-rel
+  5 3 move-to-rel
+  reverse-stem
+  ( move to top right )
+;
+
+: plot-x ( -- )
+  pen-down
+  10 15 move-to-rel
+  pen-up
+  -10 rel-x
+  pen-down
+  10 -15 move-to-rel
+  pen-up
+  ( move to top right )
+;
+
+: plot-y ( -- )
+  pen-down
+  5 3 move-to-rel
+  leg
+  leg-reverse
+  5 -3 move-to-rel
+  pen-up
+  ( move to top right )
+;
+
+: plot-z ( -- )
+  pen-down
+  10 rel-x
+  -10 15 move-to-rel
+  10 rel-x
+  pen-up
+  ( move to top right )
+;
+
 : plot-period 46 emit ;
 : space 32 emit ;
 : newline 10 emit ;
