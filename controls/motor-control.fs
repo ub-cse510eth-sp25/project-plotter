@@ -74,16 +74,16 @@ import-pin
 
 : step-x ( -- )
   high STEPx pin!
-  1 ms
+  2 ms
   low STEPx pin!
-  1 ms
+  2 ms
 ;
 
 : step-y ( -- )
   high STEPy pin!
-  1 ms
+  2 ms
   low STEPy pin!
-  1 ms
+  2 ms
 ;
 
 : step-z ( -- )
