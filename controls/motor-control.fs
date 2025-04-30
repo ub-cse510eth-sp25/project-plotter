@@ -3,24 +3,14 @@
 \ 2. counter-clockwise is backwards
 \ 3. DIR outputting high cause cw direction, and low the opposite
 
-10 constant DIRx \ GPIO 10
-11 constant STEPx \ GPIO 11
-12 constant RESETx \ GPIO 12
-13 constant ENABLEx \ GPIO 13
-14 constant SLEEPx \ GPIO 14
-\
-15 constant DIRy \ GPIO 10
-16 constant STEPy \ GPIO 11
-17 constant RESETy \ GPIO 12
-18 constant ENABLEy \ GPIO 13
-19 constant SLEEPy \ GPIO 14
+7 constant DIRx \ GPIO 7
+8 constant STEPx \ GPIO 8
 
-20 constant DIRyz \ GPIO 10
-21 constant STEPz \ GPIO 11
-22 constant RESETz \ GPIO 12
-23 constant ENABLEz \ GPIO 13
-24 constant SLEEPz \ GPIO 14
-\ update w correct GPIOs^
+11 constant DIRy \ GPIO 11
+12 constant STEPy \ GPIO 12
+
+17 constant DIRyz \ GPIO 17
+16 constant STEPz \ GPIO 16
 
 : import-pin ( -- )
   pin import
