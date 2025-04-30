@@ -37,11 +37,6 @@ echo "\ -- spacing --------" >> $OUTPUT
 cat drawing/spacing.fs | grep -v "include" >> $OUTPUT
 echo "" >> $OUTPUT
 
-# letters.fs
-echo "\ -- letters --------" >> $OUTPUT
-cat drawing/letters.fs | grep -v "include" >> $OUTPUT
-echo "" >> $OUTPUT
-
 # terminal.fs
 echo "\ -- terminal utilities --------" >> $OUTPUT
 cat utils/terminal.fs | grep -v "include" >> $OUTPUT
