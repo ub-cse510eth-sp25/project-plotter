@@ -96,11 +96,11 @@
 
 : user-input ( -- )
   \ place cursor at the beginning of the buffer
-  14 0 go-to-position
+  \ 14 0 go-to-position
 
   begin  
     \ position cursor at end of buffer for editing
-    14 total-chars @ 1 + go-to-position
+    \ 14 total-chars @ 1 + go-to-position
     
     \ read input, preserving existing content
     buffer total-chars @ + 70 total-chars @ - accept
@@ -115,10 +115,10 @@
     buffer total-chars @ type
     
     \ position cursor at end of buffer again
-    14 total-chars @ 1 + go-to-position
+    \ 14 total-chars @ 1 + go-to-position
     
     \ show word count
-    16 0 go-to-position
+    \ 16 0 go-to-position
     word-count
     
     \ ask user if they are done
