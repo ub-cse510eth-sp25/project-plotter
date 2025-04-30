@@ -52,22 +52,23 @@ echo "\ -- writing files --------" >> $OUTPUT
 cat options/writing/characters.fs | grep -v "include" >> $OUTPUT
 echo "" >> $OUTPUT
 
-# io.fs
-echo "\ -- I/O --------" >> $OUTPUT
-cat options/text-editor/io.fs | grep -v "include" >> $OUTPUT
-echo "" >> $OUTPUT
+# TODO: commenting out for testing
+# # io.fs
+# echo "\ -- I/O --------" >> $OUTPUT
+# cat options/text-editor/io.fs | grep -v "include" >> $OUTPUT
+# echo "" >> $OUTPUT
 
-# editor.fs
-echo "\ -- text editor --------" >> $OUTPUT
-cat options/text-editor/text-editor.fs | grep -v "include" >> $OUTPUT
-echo "" >> $OUTPUT
+# # editor.fs
+# echo "\ -- text editor --------" >> $OUTPUT
+# cat options/text-editor/text-editor.fs | grep -v "include" >> $OUTPUT
+# echo "" >> $OUTPUT
 
-# programs.fs
-echo "\ -- variables --------" >> $OUTPUT
-cat options/writing/programs.fs | grep -v "include" >> $OUTPUT
-echo "" >> $OUTPUT
+# # programs.fs
+# echo "\ -- variables --------" >> $OUTPUT
+# cat options/writing/programs.fs | grep -v "include" >> $OUTPUT
+# echo "" >> $OUTPUT
 
-# main.fs
-echo "\ -- main program --------" >> $OUTPUT
-cat main.fs | grep -v "include" >> $OUTPUT
-echo "" >> $OUTPUT
+# # main.fs
+# echo "\ -- main program --------" >> $OUTPUT
+# cat main.fs | grep -v "include" >> $OUTPUT
+# echo "" >> $OUTPUT
