@@ -4,9 +4,9 @@
 100 constant z-steps-per-mm
 
 ( create global variables to maintain the current position of the pen between words )
-variable cur-x
-variable cur-y
-variable cur-z
+\ variable cur-x
+\ variable cur-y
+\ variable cur-z
 
 : abs-x ( n -- )
     dup ( n n -- )

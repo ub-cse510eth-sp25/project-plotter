@@ -2,18 +2,17 @@
 \ 1. pin module was imported
 \ 2. nSTOP is an active-low input pin, so when it is low, it is active
 
-101 constant X \ TODO: move these to an initialization script?
+101 constant X
 102 constant Y
 103 constant Z
 
-1 constant nSTOPx \ TODO: update with correct pin #s
-2 constant nSTOPy
-3 constant nSTOPz
+0 constant nSTOPx
+26 constant nSTOPy
+22 constant nSTOPz
 
-\ defined in coordinates.fs \ TODO: move to initialization script?
-\ variable cur-x
-\ variable cur-y
-\ variable cur-z
+variable cur-x
+variable cur-y
+variable cur-z
 
 : nStop ( axis -- pin )
   case
