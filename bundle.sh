@@ -43,7 +43,7 @@ echo "" >> $OUTPUT
 # cat utils/terminal.fs | grep -v "include" >> $OUTPUT
 # echo "" >> $OUTPUT
 
-vars.fs
+# vars.fs
 echo "\ -- variables --------" >> $OUTPUT
 cat options/text-editor/vars.fs | grep -v "include" >> $OUTPUT
 echo "" >> $OUTPUT
