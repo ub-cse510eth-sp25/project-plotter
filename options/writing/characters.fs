@@ -220,9 +220,9 @@
 : plot-n ( -- )
   stem
   pen-down
-  reverse-stem
+  stem-reverse
   10 15 move-to-rel
-  reverse-stem
+  stem-reverse
   pen-up
   ( move to bot right )
   stem
@@ -316,7 +316,7 @@
 : plot-v ( -- )
   pen-down
   5 15 move-to-rel
-  5 -15 move-to rel
+  5 -15 move-to-rel
   pen-up
   ( move to bot right )
   stem
@@ -327,7 +327,7 @@
   stem
   5 -3 move-to-rel
   5 3 move-to-rel
-  reverse-stem
+  stem-reverse
   pen-up
   ( move to bot right )
   stem
