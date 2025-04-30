@@ -6,8 +6,8 @@
 7 constant DIRx \ GPIO 7
 8 constant STEPx \ GPIO 8
 
-1 constant DIRy \ GPIO 10
-12 constant STEPy \ GPIO 11
+11 constant DIRy \ GPIO 11
+12 constant STEPy \ GPIO 12
 
 
 17 constant DIRz \ GPIO 17
