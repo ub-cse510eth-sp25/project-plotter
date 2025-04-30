@@ -79,7 +79,7 @@
     \ store the new z location 
     cur-z !
 ;
-\ TODO: commented out for testing;
+\ TODO: commenting out for testing;
 : move-to-abs ( x y -- )
 \     dup cur-y @ ( x y y cur-y )
 \     \ if there is no y movement, this is the same as move x
