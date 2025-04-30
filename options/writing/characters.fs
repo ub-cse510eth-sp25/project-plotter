@@ -36,6 +36,8 @@
 : plot-x 88 emit ;
 : plot-y 89 emit ;
 : plot-z 90 emit ;
+: plot-period 46 emit ;
+: plot-space 32 emit ;
 
 : plot-a ( -- )
   15 rel-y
@@ -347,9 +349,18 @@
   ( move to top right )
 ;
 
-: plot-period 46 emit ;
-: space 32 emit ;
-: newline 10 emit ;
+: plot-period ( -- )
+  15 rel-y
+  5 rel-x
+  pen-down
+  pen-up
+  5 rel-x
+;
+
+: plot-space ( -- )
+  15 rel-y
+  10 rel-x
+;
 
 ( take a char and draw its representation)
 : draw-char ( char -- )
@@ -383,7 +394,7 @@
       [CHAR] Y of plot-y endof
       [CHAR] Z of plot-z endof
       [CHAR] . of plot-period endof
-      32 of space endof
+      32 of plot-space endof
       drop
     endcase
   else
