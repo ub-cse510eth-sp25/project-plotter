@@ -1,6 +1,6 @@
 ( define constants for the number of steps per mm on each axis )
-3 constant x-steps-per-mm
-3 constant y-steps-per-mm
+6 constant x-steps-per-mm
+6 constant y-steps-per-mm
 100 constant z-steps-per-mm
 
 ( create global variables to maintain the current position of the pen between words )
@@ -199,4 +199,3 @@ variable cur-z
     swap
     move-to-abs
 ;
-    

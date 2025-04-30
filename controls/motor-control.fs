@@ -13,6 +13,9 @@
 17 constant DIRz \ GPIO 17
 16 constant STEPz \ GPIO 16
 
+6 constant x-steps-per-mm
+6 constant y-steps-per-mm
+100 constant z-steps-per-mm
 
 : import-pin ( -- )
   pin import
@@ -107,15 +110,15 @@ intialize-pins-z
 
 
 : step-x-mm ( -- )
-  3 0 DO step-x LOOP
+  x-steps-per-mm 0 DO step-x LOOP
 ;
 
 : step-y-mm ( -- ) \ 3 steps per mm
-  3 0 DO step-y LOOP
+  y-steps-per-mm 0 DO step-y LOOP
 ;
 
 : step-z-mm ( -- ) \ 100 steps per mm
-  100 0 DO step-z LOOP
+  z-steps-per-mm 0 DO step-z LOOP
 ;
 
 
