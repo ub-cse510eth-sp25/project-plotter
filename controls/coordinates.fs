@@ -17,7 +17,7 @@ variable cur-z
     \ compute the movement needed
     - ( n n cur-x -- n movement )
     dup 0 < if
-	set-x-rev
+	set-x-backward
     else
 	set-x-forward
     then
@@ -43,7 +43,7 @@ variable cur-z
     \ compute the movement needed
     - ( n n cur-y -- n movement )
     dup 0 < if
-	set-y-rev
+	set-y-backward
     else
 	set-y-forward
     then
@@ -69,7 +69,7 @@ variable cur-z
     \ compute the movement needed
     - ( n n cur-z -- n movement )
     dup 0 < if
-	set-z-rev
+	set-z-backward
     else
 	set-z-forward
     then
@@ -106,13 +106,13 @@ variable cur-z
     cur-x @ > if
 	set-x-forward
     else
-	set-x-rev
+	set-x-backward
     then
     \ set the y direction
     cur-y @ > if
 	set-y-forward
     else
-	set-y-rev
+	set-y-forward
     then
     2dup ( y x y x )
     abs swap abs swap ( y x y x )
