@@ -54,6 +54,7 @@ variable cur-z
   nSTOPz pull-up-pin
 ;
 
+initialize-nSTOPs
 
 ( \\\\\\\\\\\\\\\ )
 
