@@ -3,23 +3,16 @@
 \ 2. counter-clockwise is backwards
 \ 3. DIR outputting high cause cw direction, and low the opposite
 
-10 constant DIRx \ GPIO 10
-11 constant STEPx \ GPIO 11
-12 constant RESETx \ GPIO 12
-13 constant ENABLEx \ GPIO 13
-14 constant SLEEPx \ GPIO 14
-\
-15 constant DIRy \ GPIO 10
-16 constant STEPy \ GPIO 11
-17 constant RESETy \ GPIO 12
-18 constant ENABLEy \ GPIO 13
-19 constant SLEEPy \ GPIO 14
+7 constant DIRx \ GPIO 7
+8 constant STEPx \ GPIO 8
 
-20 constant DIRyz \ GPIO 10
-21 constant STEPz \ GPIO 11
-22 constant RESETz \ GPIO 12
-23 constant ENABLEz \ GPIO 13
-24 constant SLEEPz \ GPIO 14
+1 constant DIRy \ GPIO 10
+12 constant STEPy \ GPIO 11
+
+
+17 constant DIRz \ GPIO 17
+16 constant STEPz \ GPIO 16
+
 \ update w correct GPIOs^
 
 : import-pin ( -- )
@@ -31,25 +24,16 @@ import-pin
 : intialize-pins-x ( -- ) \ sets all pins to output state
   DIRx output-pin
   STEPx output-pin
-  RESETx output-pin
-  ENABLEx output-pin
-  SLEEPx output-pin
 ;
 
 : intialize-pins-y ( -- ) \ sets all pins to output state
   DIRy output-pin
   STEPy output-pin
-  RESETy output-pin
-  ENABLEy output-pin
-  SLEEPy output-pin
 ;
 
 : intialize-pins-z ( -- ) \ sets all pins to output state
   DIRz output-pin
   STEPz output-pin
-  RESETz output-pin
-  ENABLEz output-pin
-  SLEEPz output-pin
 ;
 
 
@@ -114,15 +98,15 @@ import-pin
 
 
 : step-x-mm ( -- )
-  3 0 DO step-x LOOP;
+  3 0 DO step-x LOOP
 ;
 
 : step-y-mm ( -- ) \ 3 steps per mm
-  3 0 DO step-y LOOP;
+  3 0 DO step-y LOOP
 ;
 
 : step-z-mm ( -- ) \ 100 steps per mm
-  100 0 DO step-z LOOP;
+  100 0 DO step-z LOOP
 ;
 
 
@@ -130,11 +114,13 @@ import-pin
 
 
 : step-x-mms ( n-- )
-  0 DO step-mm-x LOOP
+  0 DO step-x-mm LOOP
 ;
 
 : step-y-mms ( n-- )
-  0 DO step-mm-y LOOP ;
+  0 DO step-y-mm LOOP
+;
 
 : step-z-mms ( n-- )
-  0 DO step-mm-z LOOP ;
+  0 DO step-z-mm LOOP
+;
