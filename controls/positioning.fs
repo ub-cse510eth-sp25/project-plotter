@@ -2,15 +2,15 @@
 \ 1. pin module was imported
 \ 2. nSTOP is an active-low input pin, so when it is low, it is active
 
-101 constant X \TODO: move these to an initialization script?
+101 constant X \ TODO: move these to an initialization script?
 102 constant Y
 103 constant Z
 
-1 constant nSTOPx \TODO: update with correct pin #s
+1 constant nSTOPx \ TODO: update with correct pin #s
 2 constant nSTOPy
 3 constant nSTOPz
 
-\ defined in coordinates.fs \TODO: move to initialization script?
+\ defined in coordinates.fs \ TODO: move to initialization script?
 \ variable cur-x
 \ variable cur-y
 \ variable cur-z
@@ -62,7 +62,7 @@
   set-x-backward
   BEGIN
     X at-stop? not
-    WHILE step-x \TODO: change forward or backward, not sure where the stops are
+    WHILE step-x \ TODO: change forward or backward, not sure where the stops are
     REPEAT
 ;
 
