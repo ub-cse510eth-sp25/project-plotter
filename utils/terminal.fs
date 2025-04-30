@@ -4,7 +4,11 @@
 ;
 
 : go-to-position ( row col -- )
-  esc[ swap 0 .r [char] ; emit 0 .r [char] H emit
+  esc[
+  swap u. drop       \ Print row without space
+  [char] ; emit      \ Print semicolon
+  u. drop            \ Print col without space
+  [char] H emit      \ Print H
 ;
 
 : clear-screen-from-cursor ( -- )
