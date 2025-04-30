@@ -1,4 +1,4 @@
-\ include ./terminal.fs
+include ./utils/terminal.fs
 include ./options/text-editor/vars.fs
 include ./options/writing/characters.fs
 include ./options/text-editor/io.fs
@@ -35,7 +35,7 @@ include ./options/writing/programs.fs
 : determine-option ( -- )
   plotter-options
   begin
-    \ 12 0 go-to-position 
+    12 0 go-to-position 
     take-input
     case
       [char] 1 of shapes exit-program false endof

@@ -32,7 +32,7 @@
 : determine-shape ( -- )
   shape-options
   begin
-    \ 7 0 go-to-position 
+    7 0 go-to-position 
     shape-input
     case
       [char] 1 of clear-screen-from-cursor plot-square false endof
@@ -74,10 +74,10 @@
 
 : determine-char ( -- )
   begin
-    \ 7 0 go-to-position 
+    7 0 go-to-position 
     char-input
     dup valid-char? if
-      \ 8 0 go-to-position
+      8 0 go-to-position
       clear-screen-from-cursor
       draw-char
       true
