@@ -82,6 +82,7 @@
   half-stem
   arm
   half-stem
+  pen-up
 ;
 
 : plot-9 ( -- )
