@@ -47,8 +47,11 @@ variable cur-z
 \ set nSTOP pins to input
 : initialize-nSTOPs ( -- )
   nSTOPx input-pin
+  nSTOPx pull-up-pin
   nSTOPy input-pin
+  nSTOPy pull-up-pin
   nSTOPz input-pin
+  nSTOPz pull-up-pin
 ;
 
 
