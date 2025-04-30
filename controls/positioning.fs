@@ -83,7 +83,7 @@ variable cur-z
 ;
 
 : z-to-home ( -- )
-  set-z-backward
+  set-z-forward
   BEGIN
     Z at-stop? not
     WHILE step-z
@@ -114,7 +114,7 @@ variable cur-z
 
     Z of
       z-to-home
-      set-z-forward
+      set-z-backward
       5 step-z-mms
       z-to-home
       0 cur-z !
