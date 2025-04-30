@@ -67,29 +67,39 @@ import-pin
   set-z-forward
 ;
 
+intialize-pins-x
+intialize-pins-y
+intialize-pins-z
+
 
 ( \\\\\\\\\\\\\\\ )
 
 
 : step-x ( -- )
-  high STEPx pin!
-  5 ms
   low STEPx pin!
-  5 ms
+  2 ms
+  high STEPx pin!
+  2 ms
+  high STEPx pin!
+  2 ms
 ;
 
 : step-y ( -- )
-  high STEPy pin!
-  5 ms
   low STEPy pin!
-  5 ms
+  2 ms
+  high STEPy pin!
+  2 ms
+  low STEPy pin!
+  2 ms
 ;
 
 : step-z ( -- )
-  high STEPz pin!
-  1 ms
   low STEPz pin!
-  1 ms
+  2 ms
+  high STEPz pin!
+  2 ms
+  low STEPz pin!
+  2 ms
 ;
 
 
