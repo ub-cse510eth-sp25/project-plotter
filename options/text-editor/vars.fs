@@ -7,7 +7,7 @@ variable index
 variable total-chars
 
 create last-action 20 allot
-S" saved" last-action place
+\ S" saved" last-action place
 
 : set-zero ( addr -- )
    0 swap !
