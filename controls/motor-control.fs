@@ -77,29 +77,29 @@ intialize-pins-z
 
 : step-x ( -- )
   low STEPx pin!
-  2 ms
+  1 ms
   high STEPx pin!
-  2 ms
+  1 ms
   high STEPx pin!
-  2 ms
+  1 ms
 ;
 
 : step-y ( -- )
   low STEPy pin!
-  2 ms
+  1 ms
   high STEPy pin!
-  2 ms
+  1 ms
   low STEPy pin!
-  2 ms
+  1 ms
 ;
 
 : step-z ( -- )
   low STEPz pin!
-  2 ms
+  1 ms
   high STEPz pin!
-  2 ms
+  1 ms
   low STEPz pin!
-  2 ms
+  1 ms
 ;
 
 
