@@ -3,7 +3,6 @@
 6 constant y-steps-per-mm
 100 constant z-steps-per-mm
 
-
 : abs-x ( n -- )
     dup ( n n -- )
     
