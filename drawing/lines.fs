@@ -36,3 +36,19 @@
 : half-stem-reverse ( -- )
   -8 rel-y
 ;
+
+: arm ( -- )
+  10 rel-x
+;
+
+: arm-reverse ( -- )
+  -10 rel-x
+;
+
+: half-arm ( -- )
+  5 rel-x
+;
+
+: half-arm-reverse ( -- )
+  -5 rel-x
+;
