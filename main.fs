@@ -41,7 +41,7 @@ include ./options/writing/programs.fs
       [char] 1 of shapes exit-program false endof
       [char] 2 of character exit-program false endof  
       [char] 3 of text-editor exit-program false endof
-      [char] 4 of about-dotty false endof
+      [char] 4 of about-dotty exit-program false endof
       [char] 5 of true endof
       dup cr ." Invalid option, try again." cr drop false swap
     endcase
