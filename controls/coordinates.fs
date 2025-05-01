@@ -1,10 +1,5 @@
 float32 import
 
-( define constants for the number of steps per mm on each axis )
-6 constant x-steps-per-mm
-6 constant y-steps-per-mm
-100 constant z-steps-per-mm
-
 : abs-x ( n -- )
     dup ( n n -- )
     
@@ -96,7 +91,7 @@ float32 import
     \ store the new z location 
     cur-z !
 ;
-\ TODO: commenting out for testing;
+
 : move-to-abs ( x y -- )
      dup cur-y @ ( x y y cur-y )
      \ if there is no y movement, this is the same as move x

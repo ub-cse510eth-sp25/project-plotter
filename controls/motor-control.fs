@@ -3,20 +3,6 @@
 \ 2. counter-clockwise is backwards
 \ 3. DIR outputting high cause cw direction, and low the opposite
 
-7 constant DIRx \ GPIO 7
-8 constant STEPx \ GPIO 8
-
-11 constant DIRy \ GPIO 11
-12 constant STEPy \ GPIO 12
-
-
-17 constant DIRz \ GPIO 17
-16 constant STEPz \ GPIO 16
-
-6 constant x-steps-per-mm
-6 constant y-steps-per-mm
-100 constant z-steps-per-mm
-
 : import-pin ( -- )
   pin import
 ;
