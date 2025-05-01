@@ -36,6 +36,16 @@
 : plot-x 88 emit ;
 : plot-y 89 emit ;
 : plot-z 90 emit ;
+: plot-0 48 emit ;
+: plot-1 49 emit ;
+: plot-2 50 emit ;
+: plot-3 51 emit ;
+: plot-4 52 emit ;
+: plot-5 53 emit ;
+: plot-6 54 emit ;
+: plot-7 55 emit ;
+: plot-8 56 emit ;
+: plot-9 57 emit ;
 : plot-period 46 emit ;
 : plot-space 32 emit ;
 
@@ -366,6 +376,104 @@
   ( move to top right )
 ;
 
+( 0 1 2 3 4 5 6 7 8 9 )
+: plot-0 ( -- )
+  pen-down
+  stem
+  arm
+  stem-reverse
+  arm-reverse
+  10 15 move-to-rel
+  pen-up
+;
+
+: plot-1 ( -- )
+  3 rel-y
+  pen-down
+  3 -3 move-to-rel
+  stem
+  -5 rel-y
+  arm
+  pen-up
+;
+
+: plot-2 ( -- )
+  pen-down
+  arm
+  half-stem
+  arm-reverse
+  half stem
+  arm
+  pen-up
+;
+
+: plot-3 ( -- )
+  pen-down
+  arm
+  stem
+  arm-reverse
+  arm
+  half-stem-reverse
+  arm-reverse
+  arm
+  half-stem
+  pen-up
+;
+
+: plot-4 ( -- )
+  pen-down
+  half-stem
+  arm
+  half-stem-reverse
+  stem
+  pen-up
+;
+
+: plot-5 ( -- )
+  plot-s
+;
+
+: plot-6 ( -- )
+  pen-down
+  stem
+  arm
+  half-stem-reverse
+  arm-reverse
+  arm
+  half-stem
+  pen-up
+;
+
+: plot-7 ( -- )
+  pen-down
+  arm
+  stem
+  pen-up
+;
+
+: plot-8 ( -- )
+  pen-down
+  stem
+  arm
+  stem-reverse
+  arm-reverse
+  half-stem
+  arm
+  half-stem
+  pen-up
+;
+
+: plot-9 ( -- )
+  10 15 move-to-rel
+  pen-down
+  stem-reverse
+  arm-reverse
+  half-stem
+  arm
+  half-stem
+  pen-up
+;
+
 : plot-period ( -- )
   stem
   half-arm
@@ -410,6 +518,16 @@
       [CHAR] X of plot-x endof
       [CHAR] Y of plot-y endof
       [CHAR] Z of plot-z endof
+      [CHAR] 0 of plot-0 endof
+      [CHAR] 1 of plot-1 endof
+      [CHAR] 2 of plot-2 endof
+      [CHAR] 3 of plot-3 endof
+      [CHAR] 4 of plot-4 endof
+      [CHAR] 5 of plot-5 endof
+      [CHAR] 6 of plot-6 endof
+      [CHAR] 7 of plot-7 endof
+      [CHAR] 8 of plot-8 endof
+      [CHAR] 9 of plot-9 endof
       [CHAR] . of plot-period endof
       32 of plot-space endof
       drop

@@ -54,7 +54,7 @@
 : char-dialogue ( -- )
   page
   cr ." Dotty: Oh so you want to start slow? I'll show you a single character, but it has to be one that I know. Remember valid characters are the following:" cr
-  ." A-Z, a-z, '.' and ' '"
+  ." A-Z, a-z, 0-9, '.' and ' '"
   cr
 ;
 

@@ -8,12 +8,12 @@
 ;
 
 : editor-rules ( -- )
-  cr ." ╓───────────────────────────────────────────────────╖"
-  cr ." ║ Instructions:                                     ║"
-  cr ." ║ - L/R arrow keys to navigate.	                    ║"
-  cr ." ║ - ENTER to save or give exit prompt.              ║"
-  cr ." ║ - Valid chararcters are (A-Z, a-z, '.' and ' ').  ║"
-  cr ." ╙───────────────────────────────────────────────────╜"
+  cr ." ╓────────────────────────────────────────────────────────╖"
+  cr ." ║ Instructions:                                          ║"
+  cr ." ║ - L/R arrow keys to navigate.	                         ║"
+  cr ." ║ - ENTER to save or give exit prompt.                   ║"
+  cr ." ║ - Valid chararcters are (A-Z, a-z, 0-9, '.' and ' ').  ║"
+  cr ." ╙────────────────────────────────────────────────────────╜"
   cr cr ." Buffer: " cr
 ;
 
@@ -51,6 +51,9 @@
 
   swap dup [CHAR] A >= over [CHAR] Z <= and
   rot or
+
+  swap dup [CHAR] 0 >= over [CHAR] 9 <= and
+  rot or  
 
   swap dup [CHAR] . = 
   rot or
