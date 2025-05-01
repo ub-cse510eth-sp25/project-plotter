@@ -89,7 +89,7 @@
   pen-down
   arm-reverse
   stem
-  arm-reverse
+  arm
   pen-up
   ( at bot right )
 ;
@@ -126,18 +126,17 @@
 ;
 
 : plot-f ( -- )
-  pen-down
-  stem
   arm
-  pen-up
-  arm-reverse
-  half-stem-reverse
   pen-down
-  8 rel-x
+  arm-reverse
+  stem
   pen-up
+  8 rel-x
+  pen-down
+  arm
+  pen up
   ( move to bot right )
-  2 rel-x
-  half-stem
+  2 y move-to-rel
 ;
 
 : plot-g ( -- )
@@ -197,6 +196,7 @@
 ;
 
 : plot-k ( -- )
+  pen-down
   stem
   pen-up
   arm
@@ -204,14 +204,14 @@
   -10 -8 move-to-rel
   10 7  move-to-rel
   pen-up
-  ( at bot right )
+  ( move to bot right )
+  stem
 ;
 
 : plot-l ( -- )
     pen-down
     stem
     arm
-    stem
     pen-up
     ( move to bot right )
 ;
@@ -266,7 +266,7 @@
   arm
   pen-down
   arm-reverse
-  leg
+  stem
   3 rel-x
   7 -5 move-to-rel
   pen-up
