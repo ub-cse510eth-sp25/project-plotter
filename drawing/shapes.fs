@@ -5,7 +5,7 @@
   -15 rel-x
   stem-reverse
   pen-up
-  15 10 move-to-rel
+  15 15 move-to-rel
   
 ;
 
