@@ -1,5 +1,6 @@
 : init ( -- )
-  pen-up \ make sure pen is not drawing
+  set-z-forward \ makes sure pen is not on glass for reset
+  2 step-z-mms
   reset
   pen-up
   170 cur-y !
