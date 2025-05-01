@@ -15,11 +15,6 @@ variable cur-x
 variable cur-y
 variable cur-z
 
-
-variable cur-x
-variable cur-y
-variable cur-z
-
 : nStop ( axis -- pin )
   case
     X of nSTOPx endof
@@ -67,7 +62,7 @@ initialize-nSTOPs
 ( \\\\\\\\\\\\\\\ )
 
 
-: x-to-home ( -- )
+: x-to-home ( -- ) \ ! This works
   set-x-backward
   BEGIN
     X at-stop? not
@@ -84,7 +79,7 @@ initialize-nSTOPs
 ;
 
 : z-to-home ( -- )
-  set-z-backward
+  set-z-backward \ ! Z is backward!!!!!!!!!!
   BEGIN
     Z at-stop? not
     WHILE step-z
