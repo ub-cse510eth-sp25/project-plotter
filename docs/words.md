@@ -22,13 +22,13 @@ set DIRy pin to high
 `set-z-forward ( -- )`
 set DIRz pin to high
 
-`set-x-rev ( -- )`
+`set-x-backward ( -- )`
 set DIRx pin to low
 
-`set-y-rev ( -- )`
+`set-y-backward ( -- )`
 set DIRy pin to low
 
-`set-z-rev ( -- )`
+`set-z-backward ( -- )`
 set DIRz pin to low
 
 `step-x ( -- )`
@@ -91,35 +91,6 @@ Sequence:
 Returns system to home/start position.  
 Written using `reset-axis`.
 
-## Motion Primitives
-
-`step-z ( -- )`   
-Moves the x axis one step.
-
-`step-z ( -- )`   
-Moves the x axis one step.
-
-`step-z ( -- )`   
-Moves the z axis one step.
-
-`set-x-rev ( -- )`   
-Sets the x axis to step in reverse.
-
-`set-x-forward ( -- )`   
-Sets the x axis to step forward.
-
-`set-y-rev ( -- )`   
-Sets the y axis to step in reverse.
-
-`set-y-forward ( -- )`   
-Sets the y axis to step forward.
-
-`set-z-rev ( -- )`   
-Sets the z axis to step in reverse.
-
-`set-z-forward ( -- )`   
-Sets the z axis to step forward.
-
 ## Absolute Positioning
 
 `abs-x ( n -- )`  
@@ -155,10 +126,10 @@ Written using `rel-x` and `rel-y`.
 
 ## Pen Control
 
-`lift-pen ( -- )`  
+`pen-up ( -- )`  
 Lifts the pen up.
 
-`lower-pen ( -- )`  
+`pen-down ( -- )`  
 Lowers the pen down.
 
 ## Spacing
@@ -167,6 +138,7 @@ Lowers the pen down.
 Moves the pen to the starting position for the next character (top-left corner of the character space).
 
 ## Lines
+
 `horizontal-line ( len -- )`  
 Draws a horizontal line from left to right.  
 Implemented as: `pen-down len rel-x pen-up`
@@ -174,6 +146,50 @@ Implemented as: `pen-down len rel-x pen-up`
 `vertical-line ( len -- )`  
 Draws a vertical line from top to bottom.  
 Implemented as: `pen-down len rel-y pen-up`
+
+`stem ( -- )`
+Draws a stem
+
+`stem-reverse ( -- )`
+Draws a stem in reverse
+
+`leg ( -- )`
+Draws a leg
+
+`leg-reverse ( -- )`
+Draws a leg in reverse
+
+`half-stem ( -- )`
+Draws half a stem
+
+`half-stem-reverse ( -- )`
+Draws half a stem in reverse
+
+`arm ( -- )`
+Draws an arm
+
+`arm-reverse ( -- )`
+Draws an arm in reverse
+
+`half-arm ( -- )`
+Draws half an arm
+
+`half-arm-reverse ( -- )`
+Draws half an arm in reverse
+
+## Characters
+
+`plot-A ( -- )` ... `plot-Z ( -- )`
+Plots the specified character
+
+`plot-0 ( -- )` ... `plot-9 ( -- )`
+Plots the specified number
+
+`plot-period ( -- )`
+Plots a period
+
+`plot-space ( -- )`
+Plots a space
 
 ## Terminal
 

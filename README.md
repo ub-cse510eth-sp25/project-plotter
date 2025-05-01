@@ -11,6 +11,7 @@ Sabrina Johnson, Tiffany Cai, Al-kesna Foster, John Abramo, Nick Brown
 - [Raspberry Pi Pico 2 (RP2350)](https://www.digikey.com/en/products/detail/raspberry-pi/SC1631/24627136)
 - [A4988](http://hiletgo.com/ProductDetail/1952643.html) stepper motor drivers.
 - [945-R-78K5.0-1.0-ND](https://www.digikey.com/en/products/detail/recom-power/R-78K5-0-1-0/18093047) 5-Volt switching regulator
+- 3D-Printed pen holder (made by @jmabramo)
 - Parts and frame from a Lulzbot Mini 3d Printer
   - Stepper motors
   - end-stop switches

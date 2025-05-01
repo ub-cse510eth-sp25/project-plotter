@@ -392,7 +392,9 @@
   pen-down
   3 -3 move-to-rel
   stem
-  -5 rel-y
+  pen-up
+  -5 rel-x
+  pen-down
   arm
   pen-up
 ;
@@ -402,7 +404,7 @@
   arm
   half-stem
   arm-reverse
-  half stem
+  half-stem
   arm
   pen-up
 ;
@@ -412,18 +414,19 @@
   arm
   stem
   arm-reverse
-  arm
-  half-stem-reverse
-  arm-reverse
-  arm
-  half-stem
   pen-up
+  half-stem-reverse
+  pen-down
+  arm
+  pen-up
+  half-stem
 ;
 
 : plot-4 ( -- )
   pen-down
   half-stem
   arm
+  pen-up
   half-stem-reverse
   stem
   pen-up
@@ -457,10 +460,12 @@
   arm
   stem-reverse
   arm-reverse
-  half-stem
-  arm
-  half-stem
   pen-up
+  half-stem
+  pen-down
+  arm
+  pen-up
+  half-stem
 ;
 
 : plot-9 ( -- )
@@ -470,8 +475,8 @@
   arm-reverse
   half-stem
   arm
-  half-stem
   pen-up
+  half-stem
 ;
 
 : plot-period ( -- )
