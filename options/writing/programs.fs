@@ -64,32 +64,6 @@
   key dup emit
 ;
 
-( not in use right now )
-: empty-the-stack ( -- )
-  begin
-    depth 0> while
-      drop
-  repeat
-;
-
-: determine-char ( -- )
-  begin
-    7 0 go-to-position 
-    char-input
-    dup valid-char? if
-      8 0 go-to-position
-      clear-screen-from-cursor
-      draw-char
-      true
-    else
-      cr ." Invalid option, try again." cr drop
-      drop
-      false
-    then
-  until
-  drop
-;
-
 : determine-char ( -- )
   begin
     7 0 go-to-position 
