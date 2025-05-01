@@ -1,7 +1,6 @@
 : init ( -- )
   reset
-  -170 rel-y
-  0 cur-y ! \ set cur y to 0 after moving it
+  170 cur-y !
+  -160 rel-y \ already at border
   border rel-x
-  border rel-y
 ;
