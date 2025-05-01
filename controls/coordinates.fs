@@ -3,7 +3,7 @@ float32 import
 : out-of-bounds? ( pos -- bool )
     dup
     border < if drop true exit then
-    canvas border - 1 - > if true exit then false
+    canvas border - >= if true exit then false
 ;
 
 : abs-x ( n -- )
