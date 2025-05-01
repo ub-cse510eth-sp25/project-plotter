@@ -552,7 +552,7 @@
     total-chars @ 0 do
       buffer i + c@ draw-char
       next-char
-      i 1+ 7 mod 0= if new-line then
+      i 1+ 8 mod 0= if carriage-return new-line then
     loop
     cr
   then
