@@ -437,6 +437,7 @@
   arm
   pen-up
   half-stem-reverse
+  pen-down
   stem
   pen-up
 ;
