@@ -91,35 +91,6 @@ Sequence:
 Returns system to home/start position.  
 Written using `reset-axis`.
 
-## Motion Primitives
-
-`step-z ( -- )`   
-Moves the x axis one step.
-
-`step-z ( -- )`   
-Moves the x axis one step.
-
-`step-z ( -- )`   
-Moves the z axis one step.
-
-`set-x-rev ( -- )`   
-Sets the x axis to step in reverse.
-
-`set-x-forward ( -- )`   
-Sets the x axis to step forward.
-
-`set-y-rev ( -- )`   
-Sets the y axis to step in reverse.
-
-`set-y-forward ( -- )`   
-Sets the y axis to step forward.
-
-`set-z-rev ( -- )`   
-Sets the z axis to step in reverse.
-
-`set-z-forward ( -- )`   
-Sets the z axis to step forward.
-
 ## Absolute Positioning
 
 `abs-x ( n -- )`  
@@ -155,10 +126,10 @@ Written using `rel-x` and `rel-y`.
 
 ## Pen Control
 
-`lift-pen ( -- )`  
+`pen-up ( -- )`  
 Lifts the pen up.
 
-`lower-pen ( -- )`  
+`pen-down ( -- )`  
 Lowers the pen down.
 
 ## Spacing
@@ -174,3 +145,33 @@ Implemented as: `pen-down len rel-x pen-up`
 `vertical-line ( len -- )`  
 Draws a vertical line from top to bottom.  
 Implemented as: `pen-down len rel-y pen-up`
+
+`stem ( -- )`
+Draws a stem
+
+`stem-reverse ( -- )`
+Draws a stem in reverse
+
+`leg ( -- )`
+Draws a leg
+
+`leg-reverse ( -- )`
+Draws a leg in reverse
+
+`half-stem ( -- )`
+Draws half a stem
+
+`half-stem-reverse ( -- )`
+Draws half a stem in reverse
+
+`arm ( -- )`
+Draws an arm
+
+`arm-reverse ( -- )`
+Draws an arm in reverse
+
+`half-arm ( -- )`
+Draws half an arm
+
+`half-arm-reverse ( -- )`
+Draws half an arm in reverse
