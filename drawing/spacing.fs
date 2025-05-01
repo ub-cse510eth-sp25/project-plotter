@@ -3,19 +3,15 @@
 5 constant LINESPACE
 
 : next-char ( -- )
-    set-x-forward
-    CHARSPACE step-x-mms
-    set-y-backward
-    CHARHEIGHT step-y-mms
+    CHARSPACE rel-x
+    CHARHEIGHT rely
 ;
 
 : carriage-return ( -- )
-    X reset-axis
-    border rel-x
+    border abs-y
 ;
 
 : new-line ( -- )
-    set-y-forward
-    LINESPACE step-y-mms
-    stem \ we always end at start position of next-char, so moving it down
+    LINESPACE rel-y
+    CHARHEIGHT rel-y \ we always end at start position of next-char, so moving it down
 ;
