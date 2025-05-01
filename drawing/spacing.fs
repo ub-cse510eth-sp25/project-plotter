@@ -4,7 +4,7 @@
 
 : next-char ( -- )
     CHARSPACE rel-x
-    CHARHEIGHT 0 - rel-y
+    0 CHARHEIGHT - rel-y
 ;
 
 : carriage-return ( -- )
