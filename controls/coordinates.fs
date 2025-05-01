@@ -18,6 +18,11 @@
     then
     abs
     x-steps-per-mm *
+
+    \ if no movement necessary
+    dup 0= if
+	exit
+    then
     
     \ move to the new location 
     0 do
@@ -44,6 +49,11 @@
     then
     abs
     y-steps-per-mm *
+
+    \ if no movement necessary
+    dup 0= if
+	exit
+    then
     
     \ move to the new location 
     0 do
@@ -70,6 +80,11 @@
     then
     abs
     z-steps-per-mm *
+
+    \ if no movement necessary
+    dup 0= if
+	exit
+    then
     
     \ move to the new location 
     0 do
