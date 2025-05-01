@@ -11,6 +11,7 @@
 
 : carriage-return ( -- )
     X reset-axis
+    border rel-x
 ;
 
 : new-line ( -- )

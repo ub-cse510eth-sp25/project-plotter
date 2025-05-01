@@ -7,6 +7,11 @@ OUTPUT="bundle.fs"
 echo "\ Zeptoforth bundle created on $(date)" > $OUTPUT
 echo "" >> $OUTPUT
 
+# globals.fs
+echo "\ -- globals --------" >> $OUTPUT
+cat controls/globals.fs | grep -v "include" >> $OUTPUT
+echo "" >> $OUTPUT
+
 # motor-control.fs
 echo "\ -- motor-control --------" >> $OUTPUT
 cat controls/motor-control.fs | grep -v "include" >> $OUTPUT
@@ -27,6 +32,11 @@ echo "\ -- pen-control --------" >> $OUTPUT
 cat controls/pen-control.fs | grep -v "include" >> $OUTPUT
 echo "" >> $OUTPUT
 
+# initialize.fs
+echo "\ -- initialize --------" >> $OUTPUT
+cat controls/initialize.fs | grep -v "include" >> $OUTPUT
+echo "" >> $OUTPUT
+
 # lines.fs
 echo "\ -- lines --------" >> $OUTPUT
 cat drawing/lines.fs | grep -v "include" >> $OUTPUT
@@ -35,6 +45,11 @@ echo "" >> $OUTPUT
 # spacing.fs
 echo "\ -- spacing --------" >> $OUTPUT
 cat drawing/spacing.fs | grep -v "include" >> $OUTPUT
+echo "" >> $OUTPUT
+
+# shapes.fs
+echo "\ -- shapes --------" >> $OUTPUT
+cat drawing/shapes.fs | grep -v "include" >> $OUTPUT
 echo "" >> $OUTPUT
 
 # terminal.fs

@@ -1,11 +1,16 @@
 float32 import
 
-( define constants for the number of steps per mm on each axis )
-6 constant x-steps-per-mm
-6 constant y-steps-per-mm
-100 constant z-steps-per-mm
+: out-of-bounds? ( pos -- bool )
+    dup
+    border < if drop true exit then
+    canvas border - 1 - > if true exit then false
+;
 
 : abs-x ( n -- )
+    \ check if out of bounds
+    dup
+    out-of-bounds? if exit then
+
     dup ( n n -- )
     
     \ get the current x position
@@ -13,6 +18,8 @@ float32 import
     
     \ compute the movement needed
     - ( n n cur-x -- n movement )
+    
+    \ compute forward or backward
     dup 0 < if
 	set-x-backward
     else
@@ -39,6 +46,10 @@ float32 import
 
 
 : abs-y ( n -- )
+    \ check if out of bounds
+    dup
+    out-of-bounds? if exit then
+
     dup ( n n -- )
     
     \ get the current y position
@@ -46,6 +57,8 @@ float32 import
     
     \ compute the movement needed
     - ( n n cur-y -- n movement )
+
+    \ compute forward or backward
     dup 0 < if
 	set-y-backward
     else
@@ -72,6 +85,10 @@ float32 import
 
 
 : abs-z ( n -- )
+    \ check if out of bounds
+    dup
+    out-of-bounds? if exit then
+
     dup ( n n -- )
     
     \ get the current z position
@@ -79,6 +96,8 @@ float32 import
     
     \ compute the movement needed
     - ( n n cur-z -- n movement )
+
+    \ compute forward or backward
     dup 0 < if
 	set-z-backward
     else
