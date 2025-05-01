@@ -2,18 +2,10 @@
 \ 1. pin module was imported
 \ 2. nSTOP is an active-low input pin, so when it is low, it is active
 
+\ Constants for axes (used in positioning only)
 101 constant X
 102 constant Y
 103 constant Z
-
-0 constant nSTOPx
-26 constant nSTOPy
-22 constant nSTOPz
-
-( create global variables to maintain the current position of the pen between words )
-variable cur-x
-variable cur-y
-variable cur-z
 
 : nStop ( axis -- pin )
   case

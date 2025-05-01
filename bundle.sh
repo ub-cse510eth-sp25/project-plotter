@@ -7,6 +7,11 @@ OUTPUT="bundle.fs"
 echo "\ Zeptoforth bundle created on $(date)" > $OUTPUT
 echo "" >> $OUTPUT
 
+# globals.fs
+echo "\ -- globals --------" >> $OUTPUT
+cat controls/globals.fs | grep -v "include" >> $OUTPUT
+echo "" >> $OUTPUT
+
 # motor-control.fs
 echo "\ -- motor-control --------" >> $OUTPUT
 cat controls/motor-control.fs | grep -v "include" >> $OUTPUT
