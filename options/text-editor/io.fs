@@ -64,6 +64,8 @@
   swap drop
 ;
 
+: empty-the-stack ( -- ) depth 0 ?do drop loop ;
+
 : filter-buffer ( -- )
   \ clear the temp buffer
   temp-buffer clear-chars-from-buffer
@@ -94,6 +96,8 @@
   total-chars @ 0 ?do
     temp-buffer i + c@ buffer i + c!
   loop
+
+  empty-the-stack
 ;
 
 : user-input ( -- )
@@ -113,7 +117,7 @@
     
     \ display updated buffer content
     14 0 go-to-position
-    \ clear-screen-from-cursor
+    clear-screen-from-cursor
     buffer total-chars @ type
     
     \ position cursor at end of buffer again
@@ -128,5 +132,11 @@
     key dup emit
     [CHAR] y = 
   until
-  buffer plot-buffer
+
+  \ ask user if they want to plot buffer
+  cr ." Plot this buffer? (y/[any key]): "
+  key dup emit
+  [CHAR] y = if
+    plot-buffer
+  then
 ;

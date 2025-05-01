@@ -54,7 +54,7 @@
 : char-dialogue ( -- )
   page
   cr ." Dotty: Oh so you want to start slow? I'll show you a single character, but it has to be one that I know. Remember valid characters are the following:" cr
-  ." A-Z, a-z, 0-9, '.' and ' '"
+  ." A-Z, a-z, 0-9, '.' and ' '. Hit [ESCAPE] to exit this program."
   cr
 ;
 
@@ -88,6 +88,29 @@
     then
   until
   drop
+;
+
+: determine-char ( -- )
+  begin
+    7 0 go-to-position 
+    char-input
+    dup 27 = if        \ check if esc was pressed
+      drop
+      cr ." Exiting..." cr
+      true
+    else
+      dup valid-char? if
+        8 0 go-to-position
+        clear-screen-from-cursor
+        draw-char
+        true
+      else
+        cr ." Invalid option, try again." cr
+        drop
+        false
+      then
+    then
+  until
 ;
 
 : character ( -- )
