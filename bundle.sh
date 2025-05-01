@@ -32,6 +32,11 @@ echo "\ -- pen-control --------" >> $OUTPUT
 cat controls/pen-control.fs | grep -v "include" >> $OUTPUT
 echo "" >> $OUTPUT
 
+# initialize.fs
+echo "\ -- initialize --------" >> $OUTPUT
+cat controls/initialize.fs | grep -v "include" >> $OUTPUT
+echo "" >> $OUTPUT
+
 # lines.fs
 echo "\ -- lines --------" >> $OUTPUT
 cat drawing/lines.fs | grep -v "include" >> $OUTPUT
