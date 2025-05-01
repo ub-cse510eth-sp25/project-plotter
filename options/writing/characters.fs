@@ -241,7 +241,8 @@
 ;
 
 : plot-o ( -- )
-  10 15 move-to-rel
+  stem
+  arm
   pen-down
   arm-reverse
   stem-reverse
@@ -329,8 +330,10 @@
 
 : plot-v ( -- )
   pen-down
-  5 15 move-to-rel
-  5 -15 move-to-rel
+  leg
+  5 5 move-to-rel
+  5 -5 move-to-rel
+  leg-reverse
   pen-up
   ( move to bot right )
   stem
@@ -364,7 +367,9 @@
   5 3 move-to-rel
   5 -3 move-to-rel
   pen-up
-  -5 3 move-to-rel
+  -5 rel-x
+  3 rel-y
+  pen-down
   leg
   pen-up
   ( move to bot right )

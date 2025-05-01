@@ -17,4 +17,5 @@
 : new-line ( -- )
     set-y-forward
     LINESPACE step-y-mms
+    stem \ we always end at start position of next-char, so moving it down
 ;
