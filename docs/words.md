@@ -189,4 +189,4 @@ Plots the specified number
 Plots a period
 
 `plot-space ( -- )`
-Moves a space
+Plots a space
