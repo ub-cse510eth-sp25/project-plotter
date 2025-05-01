@@ -138,6 +138,7 @@ Lowers the pen down.
 Moves the pen to the starting position for the next character (top-left corner of the character space).
 
 ## Lines
+
 `horizontal-line ( len -- )`  
 Draws a horizontal line from left to right.  
 Implemented as: `pen-down len rel-x pen-up`
@@ -175,3 +176,17 @@ Draws half an arm
 
 `half-arm-reverse ( -- )`
 Draws half an arm in reverse
+
+## Characters
+
+`plot-A ( -- )` ... `plot-Z ( -- )`
+Plots the specified character
+
+`plot-0 ( -- )` ... `plot-9 ( -- )`
+Plots the specified number
+
+`plot-period ( -- )`
+Plots a period
+
+`plot-space ( -- )`
+Moves a space
