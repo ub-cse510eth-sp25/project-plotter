@@ -22,13 +22,13 @@ set DIRy pin to high
 `set-z-forward ( -- )`
 set DIRz pin to high
 
-`set-x-rev ( -- )`
+`set-x-backward ( -- )`
 set DIRx pin to low
 
-`set-y-rev ( -- )`
+`set-y-backward ( -- )`
 set DIRy pin to low
 
-`set-z-rev ( -- )`
+`set-z-backward ( -- )`
 set DIRz pin to low
 
 `step-x ( -- )`
