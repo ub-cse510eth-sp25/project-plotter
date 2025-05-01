@@ -120,4 +120,8 @@
 
 ( ////////////// )
 ( dotty blurb )
-: about-dotty cr ." this will be the blurb about her specs" ;
+: about-dotty cr ." Hi, I'm Dotty! A Pen Plotter built around a Raspberry Pi Pico 2, and programmed in the forth programming language!" cr
+	      ." I started life as a Lulzbot Mini 3D Printer, but after many years of disuse, 'the ethan blanton experience' revived me into what you see now!" cr
+	      ." In addition to the pico 2, I am also comprised of three stepper motor drivers, a 5 volt regulator, and a lot of 22awg wire wrap (nick will say this was a mistake, but i disagree.)" cr cr
+	      ." And now with that out of the way, it has been nice to met you! happy plotting! "
+;
