@@ -43,7 +43,6 @@
 
 : word-count ( -- )
   ." Remaining valid characetrs: " 70 total-chars @ - . cr
-  ." Last action: " last-action count type cr
 ;
 
 : valid-char? ( char -- flag )
@@ -111,7 +110,7 @@
     
     \ display updated buffer content
     14 0 go-to-position
-    clear-screen-from-cursor
+    \ clear-screen-from-cursor
     buffer total-chars @ type
     
     \ position cursor at end of buffer again

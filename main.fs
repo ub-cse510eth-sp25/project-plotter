@@ -1,4 +1,4 @@
-include ./terminal.fs
+include ./utils/terminal.fs
 include ./options/text-editor/vars.fs
 include ./options/writing/characters.fs
 include ./options/text-editor/io.fs

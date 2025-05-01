@@ -77,7 +77,6 @@
     7 0 go-to-position 
     char-input
     dup valid-char? if
-      .s
       8 0 go-to-position
       clear-screen-from-cursor
       draw-char

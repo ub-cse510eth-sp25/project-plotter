@@ -6,10 +6,6 @@ variable index
 
 variable total-chars
 
-create last-action 20 allot
-\ TODO: commenting out for testing
-\ S" saved" last-action place 
-
 : set-zero ( addr -- )
    0 swap !
 ;
