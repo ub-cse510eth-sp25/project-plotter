@@ -204,7 +204,7 @@
   arm
   pen-down
   -10 -8 move-to-rel
-  10 7  move-to-rel
+  10 -7  move-to-rel
   pen-up
   ( move to bot right )
   stem
@@ -233,7 +233,7 @@
   stem
   pen-down
   stem-reverse
-  10 15 move-to-rel
+  10 15 move-to-rel \ TODO: this isnt working, too short;
   stem-reverse
   pen-up
   ( move to bot right )
@@ -266,7 +266,9 @@
 
 : plot-q ( -- )
   arm
+  10 rel-y
   pen-down
+  -10 rel-y
   arm-reverse
   stem
   3 rel-x
