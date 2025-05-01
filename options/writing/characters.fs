@@ -134,7 +134,7 @@
   8 rel-x
   pen-down
   arm
-  pen up
+  pen-up
   ( move to bot right )
   2 y move-to-rel
 ;
