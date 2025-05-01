@@ -2,7 +2,7 @@
   pen-down
   15 rel-x
   stem
-  -15 rel
+  -15 rel-x
   stem-reverse
   pen-up
   15 10 move-to-rel
