@@ -1,5 +1,5 @@
 : init ( -- )
   reset
   border rel-x
-  border rel-y
+  canvas border - 0 - rel-y
 ;

@@ -23,5 +23,6 @@ variable cur-x
 variable cur-y
 variable cur-z
 
-\ Constant for border (mm)
-20 constant border
+\ Constants for sizing
+10 constant border
+170 constant canvas
