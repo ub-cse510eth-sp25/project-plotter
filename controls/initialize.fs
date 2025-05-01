@@ -1,4 +1,5 @@
 : init ( -- )
+  pen-up \ make sure pen is not drawing
   reset
   pen-up
   170 cur-y !
