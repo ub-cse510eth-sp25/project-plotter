@@ -63,8 +63,8 @@ initialize-nSTOPs
 ;
 
 : y-to-home ( -- )
-  \ set-y-forward
-  set-y-backward
+  set-y-forward
+  \ set-y-backward
   BEGIN
     Y at-stop? not
     WHILE step-y
@@ -95,8 +95,8 @@ initialize-nSTOPs
 
     Y of
       y-to-home
-      \ set-y-backward
-      set-y-forward
+      set-y-backward
+      \ set-y-forward
       5 step-y-mms
       y-to-home
       0 cur-y !
