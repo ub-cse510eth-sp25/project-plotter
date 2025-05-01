@@ -58,9 +58,11 @@
   leg
   pen-up
   leg-reverse
+  2 rel-y
   pen-down
   arm-reverse
   pen-up
+  -2 rel-y
   ( move to bot right )
   leg
   arm
@@ -131,12 +133,12 @@
   arm-reverse
   stem
   pen-up
-  8 rel-x
+  -7 rel-y
   pen-down
   arm
   pen-up
   ( move to bot right )
-  2 y move-to-rel
+  half-stem
 ;
 
 : plot-g ( -- )
@@ -202,7 +204,7 @@
   arm
   pen-down
   -10 -8 move-to-rel
-  10 7  move-to-rel
+  10 -7  move-to-rel
   pen-up
   ( move to bot right )
   stem
@@ -231,7 +233,7 @@
   stem
   pen-down
   stem-reverse
-  10 15 move-to-rel
+  10 15 move-to-rel \ TODO: this isnt working, too short;
   stem-reverse
   pen-up
   ( move to bot right )
@@ -264,7 +266,9 @@
 
 : plot-q ( -- )
   arm
+  10 rel-y
   pen-down
+  -10 rel-y
   arm-reverse
   stem
   3 rel-x
