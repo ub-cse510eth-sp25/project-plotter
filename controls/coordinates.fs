@@ -6,6 +6,12 @@ float32 import
     canvas border - >= if true exit then false
 ;
 
+: out-of-bounds-z? ( pos -- bool )
+    dup
+    0 < if drop true exit then
+    170 >= if true exit then false
+;
+
 : abs-x ( n -- )
     \ check if out of bounds
     dup
@@ -87,7 +93,7 @@ float32 import
 : abs-z ( n -- )
     \ check if out of bounds
     dup
-    out-of-bounds? if exit then
+    out-of-bounds-z? if exit then
 
     dup ( n n -- )
     
