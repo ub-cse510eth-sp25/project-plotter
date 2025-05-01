@@ -32,6 +32,11 @@ include ./options/writing/programs.fs
   plotter-options
 ;
 
+: wait-for-init ( -- )
+  page
+  ." Plotter is resetting its position. Please wait one moment..." cr
+  init
+;
 
 : determine-option ( -- )
   plotter-options
@@ -49,12 +54,6 @@ include ./options/writing/programs.fs
     endcase
   until
   page
-;
-
-: wait-for-init ( -- )
-  page
-  ." Plotter is resetting its position. Please wait one moment..." cr
-  init
 ;
 
 : main ( -- )
