@@ -23,6 +23,8 @@ float32 import
 
     \ if no movement necessary
     dup 0= if
+	drop
+	drop
 	exit
     then
     
@@ -54,6 +56,8 @@ float32 import
 
     \ if no movement necessary
     dup 0= if
+	drop
+	drop
 	exit
     then
     
@@ -85,6 +89,7 @@ float32 import
 
     \ if no movement necessary
     dup 0= if
+	drop drop
 	exit
     then
     
@@ -96,7 +101,7 @@ float32 import
     \ store the new z location 
     cur-z !
 ;
-\ TODO: commenting out for testing;
+
 : move-to-abs ( x y -- )
      dup cur-y @ ( x y y cur-y )
      \ if there is no y movement, this is the same as move x
@@ -124,18 +129,26 @@ float32 import
      cur-y @ > if
  	set-y-forward
      else
- 	set-y-forward
+ 	set-y-backward
      then
      2dup ( y x y x )
+
+     \ compute the movement
+     cur-x @ -
+     swap
+     cur-y @ -
+     swap
+     
      abs swap abs swap ( y x y x )
      x-steps-per-mm * ( y x y x-steps )
      swap
      y-steps-per-mm * ( y x x-steps y-steps )
      \ determine which axis we should compute against
      2dup ( y x x-steps y-steps x-steps y-steps )
+     2dup 
      > if
- 	\ there are more x-steps than y-steps
- 	\ for every x-step, compute its y val
+	 \ there are more x-steps than y-steps
+	 \ for every x-step, compute its y val
 
 	 \ compute slope
 	 n>v
@@ -146,7 +159,7 @@ float32 import
 	 swap drop ( y x x-steps slope)
 	 0 ( y x x-steps slope y-steps-taken )
 	 rot
-
+ 
 	 0 do
 	     ( y x slope y-steps-taken )
 	     2dup ( y x slope y-steps-taken slope y-steps-taken )
@@ -162,21 +175,20 @@ float32 import
  	loop
  	drop
  	drop
-    else
+    else ( y x x-steps y-steps )
 	\ there are more y-steps than x-steps
  	\ for every y-step, compute its x val
-
 	\ compute slope
-	swap
+	swap ( y x y-steps x-steps )
  	n>v
 	swap
 	n>v
 	v/
-
  	swap
  	drop ( y x y-steps slope )
  	0 ( y x y-steps slope x-steps-taken )
  	rot
+
 
 	0 do
 	    ( y x slope x-steps-taken )
