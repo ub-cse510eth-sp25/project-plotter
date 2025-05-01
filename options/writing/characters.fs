@@ -58,9 +58,11 @@
   leg
   pen-up
   leg-reverse
+  2 rel-y
   pen-down
   arm-reverse
   pen-up
+  -2 rel-y
   ( move to bot right )
   leg
   arm
@@ -131,12 +133,12 @@
   arm-reverse
   stem
   pen-up
-  8 rel-x
+  -7 rel-y
   pen-down
   arm
   pen-up
   ( move to bot right )
-  2 y move-to-rel
+  half-stem
 ;
 
 : plot-g ( -- )
