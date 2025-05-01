@@ -2,6 +2,14 @@
 ( this will include the programs for doing each option )
 
 ( ////////////// )
+( plotter psoition )
+: wait-for-init ( -- )
+  page
+  ." Plotter is resetting its position. Please wait one moment..." cr
+  init
+;
+
+( ////////////// )
 ( shapes )
 
 : shape-dialogue ( -- )
