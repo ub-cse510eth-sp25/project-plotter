@@ -13,11 +13,12 @@ include ./options/writing/programs.fs
 
 : plotter-options ( -- )
     cr cr
-    ." [1] 🟥 🟦 🟩	Shapes & Patterns" cr
-    ." [2] A B C	Single Character" cr
-    ." [3] ABC XYZ 	Sentence" cr
-    ." [4] 🤖   	About Dotty" cr
-    ." [5] 🔌  	Power Down" cr
+    ." [1] 🔄		Reset Plotter Position" cr
+    ." [2] 🟥 🟦 🟩	Shapes & Patterns" cr
+    ." [3] A B C	Single Character" cr
+    ." [4] ABC XYZ 	Sentence" cr
+    ." [5] 🤖   	About Dotty" cr
+    ." [6] 🔌  	Power Down" cr
 ;
 
 : take-input ( -- )
@@ -35,18 +36,25 @@ include ./options/writing/programs.fs
 : determine-option ( -- )
   plotter-options
   begin
-    12 0 go-to-position 
+    13 0 go-to-position 
     take-input
     case
-      [char] 1 of shapes exit-program false endof
-      [char] 2 of character exit-program false endof  
-      [char] 3 of text-editor exit-program false endof
-      [char] 4 of about-dotty exit-program false endof
-      [char] 5 of true endof
+      [char] 1 of wait-for-init exit-program false endof
+      [char] 2 of shapes exit-program false endof
+      [char] 3 of character exit-program false endof  
+      [char] 4 of text-editor exit-program false endof
+      [char] 5 of about-dotty exit-program false endof
+      [char] 6 of true endof
       dup cr ." Invalid option, try again." cr drop false swap
     endcase
   until
   page
+;
+
+: wait-for-init ( -- )
+  page
+  ." Plotter is resetting its position. Please wait one moment..." cr
+  init
 ;
 
 : main ( -- )
