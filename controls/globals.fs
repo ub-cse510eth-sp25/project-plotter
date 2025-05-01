@@ -22,3 +22,6 @@
 variable cur-x
 variable cur-y
 variable cur-z
+
+\ Constant for border (mm)
+20 constant border
