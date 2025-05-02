@@ -403,10 +403,11 @@
 : plot-z ( -- )
   pen-down
   arm
-  -10 15 move-to-rel
+  5 rel-y
+  -10 5 move-to-rel
+  5 rel-y
   arm
   pen-up
-  ( move to top right )
 ;
 
 ( 0 1 2 3 4 5 6 7 8 9 )
