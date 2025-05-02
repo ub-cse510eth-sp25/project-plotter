@@ -8,7 +8,7 @@
 ;
 
 : carriage-return ( -- )
-    border abs-y
+    border abs-x
 ;
 
 : new-line ( -- )
