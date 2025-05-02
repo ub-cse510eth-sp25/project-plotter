@@ -26,3 +26,6 @@ variable cur-z
 \ Constants for sizing
 10 constant border
 170 constant canvas
+
+\ Constant for BELL
+21 constant BELL \ GPIO 21

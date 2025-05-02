@@ -7,8 +7,21 @@
     0 CHARHEIGHT - rel-y
 ;
 
+: init-bell ( -- )
+  BELL output-pin
+;
+
+init-bell
+
+: ring ( -- )
+  high BELL pin!
+  2 ms
+  low BELL pin!
+;
+
 : carriage-return ( -- )
     border abs-x
+    ring
 ;
 
 : new-line ( -- )

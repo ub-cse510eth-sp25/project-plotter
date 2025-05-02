@@ -476,14 +476,16 @@
 ;
 
 : plot-6 ( -- )
+  arm
   pen-down
+  arm-reverse
   stem
   arm
   half-stem-reverse
   arm-reverse
+  pen-up
   arm
   half-stem
-  pen-up
 ;
 
 : plot-7 ( -- )
@@ -508,7 +510,8 @@
 ;
 
 : plot-9 ( -- )
-  10 15 move-to-rel
+  stem
+  arm
   pen-down
   stem-reverse
   arm-reverse
