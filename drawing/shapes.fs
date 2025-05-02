@@ -7,11 +7,11 @@
 ;
 
 : tilt-up-l
-  1 -1 move-to-rel
+  -1 -1 move-to-rel
 ;
 
 : tilt-up-r
-  1 1 move-to-rel
+  1 -1 move-to-rel
 ;
 
 : plot-amogus ( -- )
@@ -33,7 +33,7 @@
   7 rel-y
   -2 rel-y
   pen-up \ end of pack
-  -4 rel-y
+  -7 rel-y
   -7 rel-x
   pen-down \ start of body
   -2 rel-y
@@ -48,6 +48,8 @@
   -3 rel-x
   -9 rel-y
   pen-up
+  9 rel-y
+  9 rel-x
 ;
 
 : tilt-down-r
@@ -59,11 +61,11 @@
 ;
 
 : tilt-up-l
-  2 -2 move-to-rel
+  -2 -2 move-to-rel
 ;
 
 : tilt-up-r
-  2 2 move-to-rel
+  2 -2 move-to-rel
 ;
 
 : plot-amogus-big ( -- )
@@ -85,7 +87,7 @@
   14 rel-y
   -4 rel-y
   pen-up \ end of pack
-  -8 rel-y
+  -14 rel-y
   -14 rel-x
   pen-down \ start of body
   -4 rel-y
@@ -100,6 +102,8 @@
   -6 rel-x
   -18 rel-y
   pen-up
+  18 rel-y
+  18 rel-x
 ;
 
 : plot-sus ( -- )
