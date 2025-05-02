@@ -47,7 +47,7 @@
   5 rel-y
   -3 rel-x
   -9 rel-y
-  pen-up
+  pen-up \ move to end
   9 rel-y
   9 rel-x
 ;
@@ -101,7 +101,7 @@
   10 rel-y
   -6 rel-x
   -18 rel-y
-  pen-up
+  pen-up \ move to end
   18 rel-y
   18 rel-x
 ;
@@ -120,9 +120,4 @@
   plot-amogus-big next-char stem-reverse
   plot-amogus-big next-char stem-reverse
   plot-amogus-big
-;
-
-: sus-test ( -- )
-  plot-sus
-  plot-very-sus
 ;
