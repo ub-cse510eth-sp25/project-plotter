@@ -82,7 +82,7 @@
 : char-dialogue ( -- )
   page
   cr ." Dotty: Oh so you want to start slow? I'll show you a single character, but it has to be one that I know. Remember valid characters are the following:" cr
-  ." A-Z, a-z, 0-9, '.' and ' '. Hit [ESCAPE] to exit this program."
+  ." A-Z, a-z, 0-9, '.' and ' '. Hit [ESCAPE] to exit this program. You are constrained to 8 characters per line."
   cr
 ;
 
@@ -104,7 +104,7 @@
       dup valid-char? if
         8 0 go-to-position
         clear-screen-from-cursor
-        draw-char
+        draw-char next-char
         true
       else
         cr ." Invalid option, try again." cr

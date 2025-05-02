@@ -138,5 +138,6 @@
   key dup emit
   [CHAR] y = if
     plot-buffer
+    carriage-return new-line
   then
 ;

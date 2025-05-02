@@ -240,6 +240,15 @@
   stem
 ;
 
+: plot-n ( -- )
+  stem
+  pen-down
+  stem-reverse
+  arm
+  stem
+  pen-up
+;
+
 : plot-o ( -- )
   stem
   arm
