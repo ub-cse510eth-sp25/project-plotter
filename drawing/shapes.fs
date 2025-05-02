@@ -31,7 +31,7 @@
   pen-down \ start of pack
   2 rel-x
   7 rel-y
-  -2 rel-y
+  -2 rel-x
   pen-up \ end of pack
   -7 rel-y
   -7 rel-x
@@ -85,7 +85,7 @@
   pen-down \ start of pack
   4 rel-x
   14 rel-y
-  -4 rel-y
+  -4 rel-x
   pen-up \ end of pack
   -14 rel-y
   -14 rel-x
@@ -111,8 +111,7 @@
   plot-amogus next-char
   plot-amogus next-char
   plot-amogus next-char
-  plot-amogus next-char
-  plot-amogus next-char
+  plot-amogus
 ;
 
 : plot-very-sus ( -- )
@@ -120,5 +119,10 @@
   plot-amogus-big next-char stem-reverse
   plot-amogus-big next-char stem-reverse
   plot-amogus-big next-char stem-reverse
-  plot-amogus-big next-char stem-reverse
+  plot-amogus-big
+;
+
+: sus-test ( -- )
+  plot-sus
+  plot-very-sus
 ;
