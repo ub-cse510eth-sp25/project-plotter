@@ -416,8 +416,12 @@
   arm
   stem-reverse
   arm-reverse
-  10 15 move-to-rel
   pen-up
+  5 rel-y
+  pen-down
+  10 5 move-to-rel
+  pen-up
+  5 rel-y
 ;
 
 : plot-1 ( -- )
@@ -586,7 +590,7 @@
     total-chars @ 0 do
       buffer i + c@ draw-char
       next-char
-      i 1+ 8 mod 0= if carriage-return new-line then
+      i 1+ 10 mod 0= if carriage-return new-line then
     loop
     cr
   then
