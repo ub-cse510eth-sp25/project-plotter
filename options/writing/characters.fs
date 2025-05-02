@@ -371,6 +371,21 @@
   stem
 ;
 
+: plot-x ( -- )
+  pen-down
+  5 rel-y
+  10 5 move-to-rel
+  5 rel-y
+  pen-up
+  stem-reverse
+  pen-down
+  5 rel-y
+  -10 5 move-to-rel
+  5 rel-y
+  pen-up
+  10 rel-x
+;
+
 : plot-y ( -- )
   pen-down
   5 3 move-to-rel
