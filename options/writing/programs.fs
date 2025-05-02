@@ -20,7 +20,9 @@
     cr cr
     ." [1] Square" cr
     ." [2] Triangle" cr
-    ." [3] Exit" cr
+    ." [3] Amogus (Crewmate)
+    ." [4] Amogus (CRewmate) Big
+    ." [5] Exit" cr
 ;
 
 : shape-input ( -- )
@@ -60,12 +62,14 @@
 : determine-shape ( -- )
   shape-options
   begin
-    7 0 go-to-position 
+    9 0 go-to-position 
     shape-input
     case
       [char] 1 of clear-screen-from-cursor plot-square false endof
       [char] 2 of clear-screen-from-cursor plot-triangle false endof
-      [char] 3 of true endof
+      [char] 3 of clear-screen-from-cursor plot-amogus false endof
+      [char] 4 of clear-screen-from-cursor plot-amogus-big false endof
+      [char] 5 of true endof
       dup cr ." Invalid option, try again." cr drop false swap
     endcase
   until
