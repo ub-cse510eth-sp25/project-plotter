@@ -20,8 +20,8 @@
     cr cr
     ." [1] Square" cr
     ." [2] Triangle" cr
-    ." [3] Amogus (Crewmate)
-    ." [4] Amogus (CRewmate) Big
+    ." [3] Amogus (Crewmate)" cr
+    ." [4] Amogus (Crewmate) Big" cr
     ." [5] Exit" cr
 ;
 
