@@ -51,6 +51,7 @@ include ./options/writing/programs.fs
 ;
 
 : main ( -- )
+  wait-for-init
   introduce-dotty
   determine-option
 ;
