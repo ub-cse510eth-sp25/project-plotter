@@ -17,6 +17,9 @@ Sabrina Johnson, Tiffany Cai, Al-kesna Foster, John Abramo, Nick Brown
   - end-stop switches
   - power supply (24-Volt)
 
+## Setup and Word Dictionary
+This is explained in detail in `./doc` directory of the repository.
+
 ## Compiling/Running
 After cloning the repository, change directories into it and run the following command:
 ``` bash
