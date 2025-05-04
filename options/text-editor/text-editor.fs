@@ -1,9 +1,6 @@
-include io.fs
-include vars.fs
 
 : text-edit ( -- )
    total-chars set-zero
-   cursor-pos set-zero
    buffer clear-buffer
    user-input
 ;
@@ -13,4 +10,6 @@ include vars.fs
   logo
   editor-rules
   text-edit
+  \ link back to main program?
 ;
+
