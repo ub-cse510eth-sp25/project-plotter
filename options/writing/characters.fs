@@ -48,6 +48,7 @@
 : plot-9 57 emit ;
 : plot-period 46 emit ;
 : plot-space 32 emit ;
+: plot-hyphen 45 emit ;
 
 : plot-a ( -- )
   stem
@@ -534,6 +535,14 @@
   arm
 ;
 
+: plot-hyphen ( -- )
+  half-stem
+  pen-down
+  arm
+  pen-up
+  half-stem
+;
+
 ( take a char and draw its representation)
 : draw-char ( char -- )
   dup valid-char? if 
@@ -577,6 +586,7 @@
       [CHAR] 9 of plot-9 endof
       [CHAR] . of plot-period endof
       32 of plot-space endof
+      45 of plot-hyphen endof
       drop
     endcase
   else

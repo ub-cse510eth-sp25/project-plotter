@@ -58,6 +58,9 @@
   swap dup [CHAR] . = 
   rot or
 
+  swap dup [CHAR] - =
+  rot or
+
   swap dup BL = 
   rot or
 
