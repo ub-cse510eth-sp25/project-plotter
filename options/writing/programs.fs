@@ -22,7 +22,9 @@
     ." [2] Triangle" cr
     ." [3] Amogus (Crewmate)" cr
     ." [4] Amogus (Crewmate) Big" cr
-    ." [5] Exit" cr
+    ." [5] UB Logo 1" cr
+    ." [6] UB Logo 2" cr
+    ." [7] Exit" cr
 ;
 
 : shape-input ( -- )
@@ -59,6 +61,32 @@
   5 10 move-to-rel
 ;
 
+: ub-logo ( -- )
+  badge-outline
+  20 rel-y
+  8 rel-x
+  letter-U
+  44 rel-x
+  letter-b
+  60 rel-y
+  -10 rel-x
+  ub-year
+  reset-x
+  reset-y
+;
+
+: ub-logo2 ( -- )
+  letter-u
+  25 rel-x
+  20 rel-y
+  letter-b
+  45 rel-y
+  reset-x
+  ub-full-name
+  reset-x
+  reset-y
+;
+
 : determine-shape ( -- )
   shape-options
   begin
@@ -69,7 +97,9 @@
       [char] 2 of clear-screen-from-cursor plot-triangle false endof
       [char] 3 of clear-screen-from-cursor plot-amogus false endof
       [char] 4 of clear-screen-from-cursor plot-amogus-big false endof
-      [char] 5 of true endof
+      [char] 5 of clear-screen-from-cursor init ub-logo false endof
+      [char] 6 of clear-screen-from-cursor init ub-logo2 false endof
+      [char] 7 of true endof
       dup cr ." Invalid option, try again." cr drop false swap
     endcase
   until

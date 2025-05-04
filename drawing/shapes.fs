@@ -121,3 +121,100 @@
   plot-amogus-big next-char stem-reverse
   plot-amogus-big
 ;
+
+\ UB logo
+: badge-outline ( -- )
+  pen-down
+  100 rel-y
+  50 40 move-to-rel
+  50 -40 move-to-rel
+  -100 rel-y
+  -100 rel-x ( at top left corner ) 
+  pen-up
+;
+
+: letter-u ( -- )
+  pen-down
+  20 rel-x
+  10 rel-y
+  -5 rel-x
+  20 rel-y
+  10 rel-x
+  -20 rel-y
+  -5 rel-x
+  -10 rel-y
+  20 rel-x
+  10 rel-y
+  -5 rel-x
+  30 rel-y
+  30 rel-x
+  -30 rel-y
+  -5 rel-x
+  -10 rel-y
+  pen-up
+;
+
+: letter-b ( -- )
+  pen-down
+  35 rel-x
+  5 5 move-to-rel
+  10 rel-y
+  -5 5 move-to-rel
+  5 5 move-to-rel
+  10 rel-y
+  -5 5 move-to-rel
+  -35 rel-x
+  -10 rel-y
+  5 rel-x
+  -20 rel-y
+  -5 rel-x
+  -10 rel-y ( outline done )
+  pen-up
+  15 5 move-to-rel
+  pen-down
+  10 rel-x
+  10 rel-y
+  -10 rel-x
+  -10 rel-y
+  pen-up
+  20 rel-y
+  pen-down
+  10 rel-x
+  10 rel-y
+  -10 rel-x
+  -10 rel-y
+  pen-up
+  15 35 move-to-rel
+;
+
+: ub-year ( -- )
+  plot-1 next-char
+  plot-8 next-char
+  plot-4 next-char
+  plot-6 next-char 
+;
+
+: ub-full-name ( -- )
+  plot-u next-char
+  plot-n next-char
+  plot-i next-char
+  plot-v next-char
+  plot-e next-char
+  plot-r next-char
+  plot-s next-char
+  plot-i next-char
+  plot-t next-char
+  plot-y next-char
+  carriage-return newline
+  plot-a next-char
+  plot-t next-char
+  plot-space next-char
+  plot-b next-char
+  plot-u next-char
+  plot-f next-char
+  plot-f next-char
+  plot-a next-char
+  plot-l next-char
+  plot-o next-char
+  
+;
