@@ -473,15 +473,7 @@
 ;
 
 : plot-5 ( -- )
-  arm
-  pen-down
-  arm-reverse
-  half-stem
-  arm
-  -5 7 move-to-rel
-  -5 rel-x
-  pen-up
-  10 rel-x
+  plot-s
 ;
 
 : plot-6 ( -- )
