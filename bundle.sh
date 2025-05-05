@@ -57,14 +57,14 @@ echo "\ -- variables --------" >> $OUTPUT
 cat options/text-editor/vars.fs | grep -v "include" >> $OUTPUT
 echo "" >> $OUTPUT
 
-# shapes.fs
-echo "\ -- shapes --------" >> $OUTPUT
-cat drawing/shapes.fs | grep -v "include" >> $OUTPUT
-echo "" >> $OUTPUT
-
 # characters.fs
 echo "\ -- writing files --------" >> $OUTPUT
 cat options/writing/characters.fs | grep -v "include" >> $OUTPUT
+echo "" >> $OUTPUT
+
+# shapes.fs
+echo "\ -- shapes --------" >> $OUTPUT
+cat drawing/shapes.fs | grep -v "include" >> $OUTPUT
 echo "" >> $OUTPUT
 
 # io.fs
