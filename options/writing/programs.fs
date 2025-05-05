@@ -168,6 +168,7 @@
 
 ( wipe glass plate)
 : clear-plate ( -- )
+  pen-up
   page
   disable-motors
   cr ." Please clean off the glass plate now, then [any key] to re initialize and continue..." cr
