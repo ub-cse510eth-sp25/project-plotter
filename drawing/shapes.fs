@@ -205,7 +205,7 @@
   plot-i next-char
   plot-t next-char
   plot-y next-char
-  carriage-return newline
+  carriage-return new-line
   plot-a next-char
   plot-t next-char
   plot-space next-char
