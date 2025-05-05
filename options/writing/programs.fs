@@ -69,7 +69,8 @@
   44 rel-x
   letter-b
   60 rel-y
-  -10 rel-x
+  reset-x
+  30 rel-x
   ub-year
   X reset-axis
   Y reset-axis
