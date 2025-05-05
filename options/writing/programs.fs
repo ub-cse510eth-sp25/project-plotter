@@ -90,7 +90,7 @@
 : determine-shape ( -- )
   shape-options
   begin
-    9 0 go-to-position 
+    12 0 go-to-position 
     shape-input
     case
       [char] 1 of clear-screen-from-cursor plot-square false endof
