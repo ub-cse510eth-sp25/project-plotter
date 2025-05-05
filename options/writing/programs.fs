@@ -165,3 +165,14 @@
 	      cr cr ." Hit [any key] when you are done reading.
 	      key drop   
 ;
+
+( wipe glass plate)
+: clear-plate ( -- )
+  page
+  disable-motors
+  cr ." Please clean off the glass plate now, then [any key] to re initialize and continue..." cr
+  key drop
+  1000 ms
+  enable-motors
+  wait-for-init
+;

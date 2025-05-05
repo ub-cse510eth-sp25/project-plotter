@@ -1,14 +1,15 @@
 \ Constants for motor driver pins
-7 constant DIRx \ GPIO 7
-8 constant STEPx \ GPIO 8
+7 constant DIRx \ x stepper direction
+8 constant STEPx \ x stepper signal
 
-11 constant DIRy \ GPIO 11
-12 constant STEPy \ GPIO 12
+11 constant DIRy \ y stepper direction
+12 constant STEPy \ y stepper signal
 
-17 constant DIRz \ GPIO 17
-16 constant STEPz \ GPIO 16
+17 constant DIRz \ z stepper direction
+16 constant STEPz \ z stepper signal
+15 constant MOT-ENA \ motor enable pins
 
-\ Constants for end stops pins
+\ Constants for end stop switch pins.
 0 constant nSTOPx
 26 constant nSTOPy
 22 constant nSTOPz
