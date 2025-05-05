@@ -72,8 +72,8 @@
   reset-x
   30 rel-x
   ub-year
-  X reset-axis
-  Y reset-axis
+  0 abs-z
+  150 abs-y
 ;
 
 : ub-logo2 ( -- )
@@ -84,8 +84,8 @@
   45 rel-y
   X reset-axis
   ub-full-name
-  X reset-axis
-  Y reset-axis
+  0 abs-z
+  150 abs-y
 ;
 
 : determine-shape ( -- )
