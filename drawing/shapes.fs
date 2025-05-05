@@ -147,7 +147,7 @@
   10 rel-y
   -5 rel-x
   30 rel-y
-  30 rel-x
+  -30 rel-x
   -30 rel-y
   -5 rel-x
   -10 rel-y
