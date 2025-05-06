@@ -62,6 +62,7 @@
 ;
 
 : ub-logo ( -- )
+  20 rel-x
   badge-outline
   20 rel-y
   8 rel-x
@@ -70,10 +71,9 @@
   letter-b
   30 rel-y
   10 abs-x
-  30 rel-x
+  50 rel-x
   ub-year
-  10 abs-x
-  160 abs-y
+  init
 ;
 
 : ub-logo2 ( -- )
@@ -84,9 +84,9 @@
   letter-b
   25 rel-y
   10 abs-x
+  10 rel-x
   ub-full-name
-  10 abs-x
-  160 abs-y
+  init
 ;
 
 : determine-shape ( -- )
