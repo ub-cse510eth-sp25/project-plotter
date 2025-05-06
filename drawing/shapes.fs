@@ -147,7 +147,7 @@
   10 rel-y
   -5 rel-x
   30 rel-y
-  30 rel-x
+  -30 rel-x
   -30 rel-y
   -5 rel-x
   -10 rel-y
@@ -205,7 +205,7 @@
   plot-i next-char
   plot-t next-char
   plot-y next-char
-  carriage-return newline
+  carriage-return new-line
   plot-a next-char
   plot-t next-char
   plot-space next-char

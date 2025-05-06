@@ -37,6 +37,10 @@ import-pin
   low DIRz pin!
 ;
 
+: initialize-enable-pins ( -- )
+  MOT-ENA output-pin
+  low MOT-ENA pin!
+;
 
 : intialize-pins-x ( -- ) \ sets all pins to output state
   DIRx output-pin
@@ -56,6 +60,7 @@ import-pin
   set-z-forward
 ;
 
+initialize-enable-pins
 intialize-pins-x
 intialize-pins-y
 intialize-pins-z
@@ -63,6 +68,16 @@ intialize-pins-z
 
 ( \\\\\\\\\\\\\\\ )
 
+
+: enable-motors ( -- )
+  low MOT-ENA pin!
+;
+
+: disable-motors ( -- )
+  high MOT-ENA pin!
+;
+
+disable-motors
 
 : step-x ( -- )
   low STEPx pin!

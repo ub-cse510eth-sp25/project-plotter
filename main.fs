@@ -18,8 +18,9 @@ include ./options/writing/programs.fs
     ." [3] A B C	Single Character" cr
     ." [4] ABC XYZ 	Sentence" cr
     ." [5] 🤖   	About Dotty" cr
-    ." [6] 🔌  	Power Down" cr
-;
+    ." [6] 🧼  	Clean Plate" cr
+    ." [7] 🔌  	Power Down" cr
+    ;
 
 : take-input ( -- )
   cr
@@ -43,11 +44,13 @@ include ./options/writing/programs.fs
       [char] 3 of character exit-program false endof  
       [char] 4 of text-editor exit-program false endof
       [char] 5 of about-dotty exit-program false endof
-      [char] 6 of true endof
+      [char] 6 of clear-plate exit-program false endof
+      [char] 7 of true endof
       dup cr ." Invalid option, try again." cr drop false swap
     endcase
   until
   page
+  disable-motors
 ;
 
 : main ( -- )

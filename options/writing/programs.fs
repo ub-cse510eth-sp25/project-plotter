@@ -19,12 +19,12 @@
 : shape-options ( -- )
     cr cr
     ." [1] Square" cr
-    ." [2] Triangle" cr
-    ." [3] Amogus (Crewmate)" cr
-    ." [4] Amogus (Crewmate) Big" cr
-    ." [5] UB Logo 1" cr
-    ." [6] UB Logo 2" cr
-    ." [7] Exit" cr
+    \ ." [2] Triangle" cr
+    ." [2] Amogus (Crewmate)" cr
+    ." [3] Amogus (Crewmate) Big" cr
+    ." [4] UB Logo 1" cr
+    ." [5] UB Logo 2" cr
+    ." [6] Exit" cr
 ;
 
 : shape-input ( -- )
@@ -62,44 +62,45 @@
 ;
 
 : ub-logo ( -- )
+  20 rel-x
   badge-outline
   20 rel-y
   8 rel-x
   letter-U
   44 rel-x
   letter-b
-  60 rel-y
-  -10 rel-x
+  30 rel-y
+  10 abs-x
+  50 rel-x
   ub-year
-  reset-x
-  reset-y
+  init
 ;
 
 : ub-logo2 ( -- )
+  40 rel-x
   letter-u
   25 rel-x
   20 rel-y
   letter-b
-  45 rel-y
-  reset-x
+  25 rel-y
+  10 abs-x
   ub-full-name
-  reset-x
-  reset-y
+  init
 ;
 
 : determine-shape ( -- )
   shape-options
   begin
-    9 0 go-to-position 
+    11 0 go-to-position 
     shape-input
     case
       [char] 1 of clear-screen-from-cursor plot-square false endof
-      [char] 2 of clear-screen-from-cursor plot-triangle false endof
-      [char] 3 of clear-screen-from-cursor plot-amogus false endof
-      [char] 4 of clear-screen-from-cursor plot-amogus-big false endof
-      [char] 5 of clear-screen-from-cursor init ub-logo false endof
-      [char] 6 of clear-screen-from-cursor init ub-logo2 false endof
-      [char] 7 of true endof
+      \ [char] 2 of clear-screen-from-cursor plot-triangle false endof
+      [char] 2 of clear-screen-from-cursor plot-amogus false endof
+      [char] 3 of clear-screen-from-cursor plot-amogus-big false endof
+      [char] 4 of clear-screen-from-cursor init ub-logo false endof
+      [char] 5 of clear-screen-from-cursor init ub-logo2 false endof
+      [char] 6 of true endof
       dup cr ." Invalid option, try again." cr drop false swap
     endcase
   until
@@ -164,4 +165,16 @@
 	      ." And now with that out of the way, it has been nice to met you! happy plotting! "
 	      cr cr ." Hit [any key] when you are done reading.
 	      key drop   
+;
+
+( wipe glass plate)
+: clear-plate ( -- )
+  pen-up
+  page
+  disable-motors
+  cr ." Please clean off the glass plate now, then [any key] to re initialize and continue..." cr
+  key drop
+  1000 ms
+  enable-motors
+  wait-for-init
 ;

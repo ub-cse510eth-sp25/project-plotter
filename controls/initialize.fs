@@ -1,4 +1,5 @@
 : init ( -- )
+  enable-motors
   set-z-forward \ makes sure pen is not on glass for reset
   2 step-z-mms
   reset
