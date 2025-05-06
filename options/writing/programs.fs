@@ -77,11 +77,12 @@
 ;
 
 : ub-logo2 ( -- )
+  40 rel-x
   letter-u
   25 rel-x
   20 rel-y
   letter-b
-  45 rel-y
+  25 rel-y
   10 abs-x
   ub-full-name
   10 abs-x
