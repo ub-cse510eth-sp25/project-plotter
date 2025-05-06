@@ -68,9 +68,9 @@
   letter-U
   44 rel-x
   letter-b
-  60 rel-y
+  30 rel-y
   10 abs-x
-  30 rel-x
+  40 rel-x
   ub-year
   10 abs-x
   160 abs-y
