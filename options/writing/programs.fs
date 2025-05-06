@@ -69,10 +69,10 @@
   44 rel-x
   letter-b
   60 rel-y
-  reset-x
+  0 abs-x
   30 rel-x
   ub-year
-  0 abs-z
+  0 abs-x
   150 abs-y
 ;
 
@@ -82,9 +82,9 @@
   20 rel-y
   letter-b
   45 rel-y
-  X reset-axis
+  0 abs-x
   ub-full-name
-  0 abs-z
+  0 abs-x
   150 abs-y
 ;
 
