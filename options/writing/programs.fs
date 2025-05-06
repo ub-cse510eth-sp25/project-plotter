@@ -70,7 +70,7 @@
   letter-b
   30 rel-y
   10 abs-x
-  40 rel-x
+  30 rel-x
   ub-year
   10 abs-x
   160 abs-y
