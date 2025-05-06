@@ -69,11 +69,11 @@
   44 rel-x
   letter-b
   60 rel-y
-  0 abs-x
+  10 abs-x
   30 rel-x
   ub-year
-  0 abs-x
-  150 abs-y
+  10 abs-x
+  160 abs-y
 ;
 
 : ub-logo2 ( -- )
@@ -82,10 +82,10 @@
   20 rel-y
   letter-b
   45 rel-y
-  0 abs-x
+  10 abs-x
   ub-full-name
-  0 abs-x
-  150 abs-y
+  10 abs-x
+  160 abs-y
 ;
 
 : determine-shape ( -- )
