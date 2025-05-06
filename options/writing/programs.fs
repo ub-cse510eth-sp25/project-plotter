@@ -84,7 +84,6 @@
   letter-b
   25 rel-y
   10 abs-x
-  10 rel-x
   ub-full-name
   init
 ;
