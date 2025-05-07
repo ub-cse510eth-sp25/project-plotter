@@ -58,16 +58,16 @@ Move `n` mms in y-axis
 `step-z-mms ( n -- )`
 Move `n` mms in z-axis
 
-## Axis Primitives
+## Positioning
 
-`nStop? ( axis -- pin )`  
+`nStop ( axis -- pin )`  
 Returns the pin constant given the axis (also a constant.)
+
+`initialize-nSTOPs ( -- )`
+Initializes end stop pins and sets them to pull up pins.
 
 `at-stop? ( axis -- bool )`  
 Is a stop hit in the `axis` position?
-
-<!-- `current-pos ( axis -- n )`  <!--! Currently not in use
-Returns the current position of the given `axis`. -->
 
 `x-to-home ( -- )`
 Moves x postion to origin.
@@ -90,6 +90,9 @@ Sequence:
 `reset ( -- )`  
 Returns system to home/start position.  
 Written using `reset-axis`.
+
+`init ( -- )`  
+Initializes system by enabling motors, homing, and moving pen to start position (accounting for borders).
 
 ## Absolute Positioning
 
@@ -137,6 +140,12 @@ Lowers the pen down.
 `next-char ( -- )`  
 Moves the pen to the starting position for the next character (top-left corner of the character space).
 
+`carriage-return ( -- )`
+Moves pen left to the starting position of the line.
+
+`new-line ( -- )`
+Moves pen down to the starting position of a new line.
+
 ## Lines
 
 `horizontal-line ( len -- )`  
@@ -148,48 +157,34 @@ Draws a vertical line from top to bottom.
 Implemented as: `pen-down len rel-y pen-up`
 
 `stem ( -- )`
-Draws a stem
+Draws a stem.
 
 `stem-reverse ( -- )`
-Draws a stem in reverse
+Draws a stem in reverse.
 
 `leg ( -- )`
-Draws a leg
+Draws a leg.
 
 `leg-reverse ( -- )`
-Draws a leg in reverse
+Draws a leg in reverse.
 
 `half-stem ( -- )`
-Draws half a stem
+Draws half a stem.
 
 `half-stem-reverse ( -- )`
-Draws half a stem in reverse
+Draws half a stem in reverse.
 
 `arm ( -- )`
-Draws an arm
+Draws an arm.
 
 `arm-reverse ( -- )`
-Draws an arm in reverse
+Draws an arm in reverse.
 
 `half-arm ( -- )`
-Draws half an arm
+Draws half an arm.
 
 `half-arm-reverse ( -- )`
-Draws half an arm in reverse
-
-## Characters
-
-`plot-A ( -- )` ... `plot-Z ( -- )`
-Plots the specified character
-
-`plot-0 ( -- )` ... `plot-9 ( -- )`
-Plots the specified number
-
-`plot-period ( -- )`
-Plots a period
-
-`plot-space ( -- )`
-Plots a space
+Draws half an arm in reverse.
 
 ## Terminal
 
@@ -299,10 +294,13 @@ Draws a triangle.
 Takes an alpha character and produces the uppercase version of it. Otherwise, it leave s the character on the stack.
 
 `plot-*`
-Plots an uppercase character or number. The prototype of these words (defined above) emit the character for tetsing purposes.
+Plots an uppercase character or number. The prototype of these words (defined above) emit the character for testing purposes.
 
 `plot-period`
 Plots a period.
+
+`plot-hyphen`
+Plots a hyphen.
 
 `plot-space`
 "Plots" a space.
@@ -312,6 +310,14 @@ Takes a character and plots it if it is valid. If not, the plotter does nothing.
 
 `plot-buffer ( -- )`
 Plots all characters in a buffer.
+
+## Drawing (Art and UB Logos)
+
+`plot-amogus ( -- )`
+Plots a 10x15 mm Among Us Crewmate.
+
+`plot-amogus-big ( -- )`
+Plots a 20x30 mm Among Us Crewmate.
 
 ## Main Program
 

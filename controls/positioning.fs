@@ -54,7 +54,7 @@ initialize-nSTOPs
 ( \\\\\\\\\\\\\\\ )
 
 
-: x-to-home ( -- ) \ ! This works
+: x-to-home ( -- )
   set-x-backward
   BEGIN
     X at-stop? not
@@ -64,7 +64,6 @@ initialize-nSTOPs
 
 : y-to-home ( -- )
   set-y-forward
-  \ set-y-backward
   BEGIN
     Y at-stop? not
     WHILE step-y
@@ -72,7 +71,7 @@ initialize-nSTOPs
 ;
 
 : z-to-home ( -- )
-  set-z-backward \ ! This works
+  set-z-backward
   BEGIN
     Z at-stop? not
     WHILE step-z
@@ -87,7 +86,7 @@ initialize-nSTOPs
   case
     X of
       x-to-home
-      set-x-forward \ ! This works
+      set-x-forward
       5 step-x-mms
       x-to-home
       0 cur-x !
@@ -96,7 +95,6 @@ initialize-nSTOPs
     Y of
       y-to-home
       set-y-backward
-      \ set-y-forward
       5 step-y-mms
       y-to-home
       0 cur-y !
@@ -104,7 +102,7 @@ initialize-nSTOPs
 
     Z of
       z-to-home
-      set-z-forward \ ! This works
+      set-z-forward
       5 step-z-mms
       z-to-home
       0 cur-z !
