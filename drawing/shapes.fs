@@ -218,3 +218,174 @@
   plot-o next-char
   
 ;
+
+: scale ( val -- valscaledby5 )
+  5 *
+;
+
+: ethans-head ( -- )
+  2 scale rel-x
+  pen-down
+  12 scale rel-x ( long horiz line )
+  2 scale 2 scale move-to-rel
+  19 scale rel-y ( long vert line )
+  -2 scale 2 scale move-to-rel
+  -12 scale rel-x ( long horiz line )
+  -2 scale -2 scale move-to-rel
+  -19 scale rel-y
+  2 scale -2 scale move-to-rel
+  pen-up
+  ( end position is at start of long horiz line )
+;
+
+: ethans-hair ( -- )
+  pen-down
+  3 scale rel-x
+  -3 scale rel-y
+  1 scale rel-x
+  1 scale rel-y
+  8 scale rel-x
+  -1 scale rel-y
+  1 scale rel-x
+  3 scale rel-y
+  3 scale rel-x
+;
+
+: ethans-ears ( -- )
+  ( pen is already down, draw outer )
+  4 scale rel-x
+  7 scale rel-y
+  -4 scale rel-x
+  pen-up
+  ( move and draw inner )
+  -6 scale rel-y
+  1 scale rel-x
+  pen-down
+  2 scale rel-x
+  5 scale rel-y
+  pen-up
+  -1 scale rel-x
+  pen-down
+  -2 scale rel-y
+  pen-up ( move to left side of head )
+  -4 scale rel-y
+  -18 scale rel-x
+  pen-down ( draw right ear )
+  -4 scale rel-x
+  7 scale rel-y
+  4 scale rel-x
+  pen-up
+  ( move and draw inner ear )
+  -6 scale rel-y
+  -1 scale rel-x
+  pen-down
+  -2 scale rel-x
+  5 scale rel-y
+  pen-up
+  1 scale rel-x
+  pen-down
+  -2 scale rel-y
+  pen-up
+;
+
+: ethans-glasses ( -- )
+  ( draw left glasses )
+  pen-down
+  5 scale rel-x
+  4 scale rel-y
+  -5 scale rel-x
+  -4 scale rel-y
+  pen-up ( glasses done, draw reflection )
+  2 scale 1 scale move-to-rel
+  pen-down
+  2 scale rel-y
+  pen-up
+  1 scale rel-x
+  pen-down
+  -1 scale rel-y
+  pen-up
+  2 scale rel-x
+  ( draw bridge of glasses )
+  pen-down
+  4 scale rel-x
+  pen-up
+  -2 scale rel-y
+  ( draw right glasses )
+  pen-down
+  5 scale rel-x
+  4 scale rel-y
+  -5 scale rel-x
+  -4 scale rel-y
+  pen-up ( glasses done, draw reflection )
+  2 scale 1 scale move-to-rel
+  pen-down
+  2 scale rel-y
+  pen-up
+  1 scale rel-x
+  pen-down
+  -1 scale rel-y
+  pen-up ( at top of smaller glare on right glasses )
+;
+
+: ethans-nose ( -- )
+  pen-down
+  -2 scale rel-x
+  -4 scale rel-y
+  pen-up
+  -2 scale rel-x
+  pen-down
+  4 scale rel-y
+  -2 scale rel-x
+  pen-up ( at bot left of nose )
+;
+
+: ethans-beard ( -- )
+  ( draw beard and left go tee )
+  pen-down
+  3 scale 3 scale move-to-rel
+  -2 scale rel-y
+  3 scale rel-x
+  pen-up
+  ( move to and draw go tee start )
+  3 scale rel-y
+  pen-down
+  1 scale rel-x
+  -1 scale rel-y
+  2 scale rel-x
+  1 scale rel-y
+  1 scale rel-x
+  pen-up
+  ( move to and draw beard )
+  -3 scale rel-y
+  pen-down
+  3 scale rel-x
+  2 scale rel-y
+  3 scale -3 scale move-to-rel
+  pen-up ( at top right of beard )
+;
+
+: ethans-mouth ( -- )
+  pen-down
+  1 scale rel-y
+  -8 scale rel-x
+  -1 scale rel-y
+  8 scale rel-x
+  pen-up
+;
+
+: draw-ethan ( -- )
+  7 scale rel-x
+  ethans-head
+  -2 scale rel-x 5 scale rel-y
+  ethans-hair
+  ethans-ears
+  -2 scale rel-y 3 scale rel-x 
+  ethans-glasses
+  -2 scale rel-x 3 scale rel-y
+  ethans-nose
+  -5 scale 1 scale move-to-rel
+  ethans-beard
+  -4 scale 2 scale move-to-rel ( top right of mouth)
+  ethans-mouth
+  init ( done !)
+;
