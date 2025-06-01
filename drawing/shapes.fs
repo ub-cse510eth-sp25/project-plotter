@@ -224,7 +224,7 @@
 ;
 
 : ethans-head ( -- )
-  6 scale rel-x
+  2 scale rel-x
   pen-down
   12 scale rel-x ( long horiz line )
   2 scale 2 scale move-to-rel
@@ -374,13 +374,14 @@
 ;
 
 : draw-ethan ( -- )
+  7 scale rel-x
   ethans-head
-  -2 scale 5 scale move-to-rel
+  -2 scale rel-x 5 scale rel-y
   ethans-hair
   ethans-ears
-  2 scale 1 scale move-to-rel 
+  -2 scale rel-y 3 scale rel-x 
   ethans-glasses
-  2 scale 3 scale move-to-rel
+  -2 scale rel-x 3 scale rel-y
   ethans-nose
   -5 scale 1 scale move-to-rel
   ethans-beard
