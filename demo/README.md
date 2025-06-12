@@ -1,10 +1,13 @@
 Here lies photos/videos for the pen-plotter. Take a look!
 
 # Demo Videos
-- [Character plotting demo](charset.mp4)
-- [Ethan demo](ethan.mp4) 
-- [UB Logo demo 1](ub-logo-1.mp4)
-- [UB Logo demo 2](ub-logo-2.mp4)
+**[View all demo videos on Google Drive](https://drive.google.com/drive/folders/1VfWlJM_peNXadVSOmIBtBpHnOLiJix8k?usp=sharing)**
+
+Videos include:
+- Character plotting demo
+- Ethan demo  
+- UB Logo demo 1
+- UB Logo demo 2
 
 # UI Screenshots
 ![Main menu](ui/plotter-main-menu.png)
